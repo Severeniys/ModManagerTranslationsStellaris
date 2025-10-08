@@ -56,7 +56,7 @@ class TextConverter(QMainWindow):
         
         self.isifra = 0     
         
-        self.direktoria1 = f"{self.dirs}\katalog\init_l"      
+        self.direktoria1 = rf"{self.dirs}\katalog\init_l"      
         self.lovie = None        
         
         self.werkil1 = False 
@@ -137,19 +137,19 @@ class TextConverter(QMainWindow):
         newor3 = QAction(QIcon(f"{self.dirs}\katalog\impek\\251970.png"),"Сборка модов", self)
         self.tb.addAction(newor3)
         """ 
-        newor4 = QAction(QIcon(f"{self.dirs}\katalog\impek\\icons8-per.png"),"TextConverter - Менеджер", self)
+        newor4 = QAction(QIcon(rf"{self.dirs}\katalog\impek\\icons8-per.png"),"TextConverter - Менеджер", self)
         newTipt4 = "Открывает Менеджер модов"
         self.tb.addAction(newor4)
         self.gjlcrfprf(newor4, newTipt4)
         
         self.tb.addSeparator()
         
-        newor5 = QAction(QIcon(f"{self.dirs}\katalog\impek\\53878.png"),"Преобразовать, Копировать", self)
+        newor5 = QAction(QIcon(rf"{self.dirs}\katalog\impek\\53878.png"),"Преобразовать, Копировать", self)
         newTipt5 = "Вставте короткий текст и нажмите чтобы зашифровать ключи и ссылки и сразу скопировать в буфер обмена."
         self.tb.addAction(newor5)
         self.gjlcrfprf(newor5, newTipt5)
         
-        newor6 = QAction(QIcon(f"{self.dirs}\katalog\impek\\53896.png"),"Вставить, Преобразовать, Копировать", self)
+        newor6 = QAction(QIcon(rf"{self.dirs}\katalog\impek\\53896.png"),"Вставить, Преобразовать, Копировать", self)
         newTipt6 = "Переведя текст нажмите чтобы вставить текст из буфера обмена и ражшифровать и затем получить обратно его в буфер обмена."
         self.tb.addAction(newor6)
         self.gjlcrfprf(newor6, newTipt6)
