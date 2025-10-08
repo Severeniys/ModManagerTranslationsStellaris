@@ -1,0 +1,6 @@
+katalog/init_l/
+.vscode/
+TextConverter.exe
+TextConverter.spec
+build/
+main.spec

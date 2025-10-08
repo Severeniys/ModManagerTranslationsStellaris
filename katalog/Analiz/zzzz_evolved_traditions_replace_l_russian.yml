@@ -1,0 +1,214 @@
+﻿l_russian:
+
+# ------------------------------------------------- Adaptability
+ tr_adaptability_finish_desc: "Открывает решение §Y$decision_prospect$§!, которое позволяет нам отыскать дополнительное месторождение на наших планетах.\nОткрыты бонусы за стремление: §G+1§!\n\n§EСтанет доступно дерево традиций второго уровня §YИскусство управления§!.§!\n"
+ tr_adaptability_void_finish_desc: "Открывает решение §Y$decision_prospect_void$§!, которое позволяет нам отыскать дополнительные ресурсы на орбитах наших сред обитания.\nОткрыты бонусы за стремление: §G+1§!\n\n§EСтанет доступно дерево традиций второго уровня §YИскусство управления§!.§!\n"
+
+# ------------------------------------------------- Diplomacy
+ tr_diplomacy_diplomatic_networking_desc: "Посольства производят §G+3§! £unity£ §Yединства§!, увеличиваясь до §G+10§! на основе £diplo_weight£ §Yдипломатического веса§! империи"
+
+ tr_diplomacy_finish_tooltip: "Дипломатический вес: §G+10%§!\nДоступные послы: §G+1§!\nОткрыты бонусы за стремление: §G+1§!\n\n§EСтанет доступно дерево традиций второго уровня §YИскусство управления§!.§!\n"
+
+# ------------------------------------------------- Discovery
+ tr_discovery_finish_tooltip: "После исследования §Y5§! £trigger_tec_research£ технологий, империя имеет §Y10%§! шанс получить случайное §Gгарантированное исследование§! с §Y25%§! прогрессом за каждую последующую исследованную технологию. Этот эффект суммируется и сбрасывается после предоставления технологии.\nОткрыты бонусы за стремление: §G+1§!\n\n§EСтанет доступно дерево традиций второго уровня §YИзобретательность§!.§!\n"
+ tr_discovery_federations_finish_tooltip: "После исследования §Y5§! £trigger_tec_research£ технологий, империя имеет §Y10%§! шанс получить случайное §GГарантированное исследование§! с §Y25%§! прогрессом за каждую последующую исследованную технологию. Этот эффект суммируется и сбрасывается после предоставления технологии.\nОткрывает доступ к типу федерации §Y$research_federation$§!.\nОткрыты бонусы за стремление: §G+1§!\n\n§EСтанет доступно дерево традиций второго уровня §YИзобретательность§!.§!\n"
+
+ tr_discovery_databank_uplinks: "$tech_databank_uplinks$"
+ tr_discovery_databank_uplinks_desc: "§HРазблокируется указ:§! $edict_research_subsidies$\n§Y$mod_station_researchers_produces_mult$§! увеличивается на §G50%§!.\n§Y$starbase_constructions_research_produces$§! увеличивается на §G20%§!."
+ tr_discovery_databank_uplinks_delayed: "$tech_databank_uplinks_desc$"
+
+# ------------------------------------------------- Domination
+ tr_domination_finish_desc: "$MOD_EMPIRE_SIZE_POPS_MULT$ §G-10%§!\nОткрыты бонусы за стремление: §G+1§!\n\n§EСтанет доступно дерево традиций второго уровня §YКонтроль§!.§!\n"
+ tr_domination_federations_finish_desc: "$MOD_EMPIRE_SIZE_POPS_MULT$ §G-10%§!\nОткрывает доступ к типу федерации §Y$hegemony_federation$§!.\nОткрыты бонусы за стремление: §G+1§!\n\n§EСтанет доступно дерево традиций второго уровня §YКонтроль§!.§!\n"
+
+ tr_domination_judgment_corps_desc: "§HРазблокируется указ:§! $edict_enhanced_surveillance$"
+ tr_domination_trust_officers_desc: "§HРазблокируется указ:§! $edict_enhanced_surveillance$"
+# ------------------------------------------------- Expansion
+ tr_expansion_galactic_ambition: "Неизведанные чудеса"
+ tr_expansion_galactic_ambition_tooltip: "Наши планеты получат £blocker£ §YЗалежь ресурсов§! при колонизации или через £unity£ планетарное решение."
+ tr_expansion_galactic_ambition_delayed: "Мы должны быть готовы ко всему, что ожидает нас на новых рубежах, которые мы открываем и в которые мы вторгаемся, и богатства и чудеса природы, которые мы находим, являются ключом к нашему пути в лучшее будущее."
+
+ tr_expansion_galactic_ambition_vd: "Астральный дизайн"
+ tr_expansion_galactic_ambition_vd_tooltip: "Наши среды обитания получат £blocker£ §YЗалежь§! на основе характеристик среды обитания при создании или через £unity£ планетарное решение."
+ tr_expansion_galactic_ambition_vd_delayed: "Новые среды обитания должны быть грамотно спроектированы и оснащены соответствующими установками, чтобы обеспечить нашему виду лучшее будущее."
+
+ tr_expansion_finish_desc: "Максимум районов (только планеты естественного происхождения): §G+1§!\nОткрыты бонусы за стремление: §G+1§!\n\n§EСтанет доступно дерево традиций второго уровня §YПропаганда§!.§!\n" #Разрастание
+ tr_expansion_finish_void_tooltip: "$MOD_PLANET_MAX_DISTRICTS_ADD$ о обитании: _[§G]_ +1 _[§!]_ _[%1]_Разблокированы привилегии вознесения:  §G+1§! \n\n§EБудет доступно дерево традиций уровня II §YПропаганда§!.§! \n"
+
+
+ tr_tec_expansion_a_new_life_cloning: "Криобанки эмбрионов"
+ tr_tec_expansion_a_new_life_cloning_desc: "£pops£ §YСкорость сбора органических поселений§! увеличена на §G+10%§!."
+ tr_tec_expansion_a_new_life_cloning_delayed: "Сохраняя фундаментальную основу нашего вида и перенося целые партии почти развитых эмбрионов в новые колонии, мы значительно улучшим процесс колонизации, адаптации и развития."
+
+# ------------------------------------------------- Harmony
+ tr_harmony_finish_desc: "$MOD_PLANETARY_ASCENSION_EFFECT_MULT$: §G+25%§!\nОткрыты бонусы за стремление: §G+1§!\n\n§EСтанет доступно дерево традиций второго уровня §YБаланс§!.§!\n"
+ tr_harmony_federations_finish_desc: "$MOD_PLANETARY_ASCENSION_EFFECT_MULT$: §G+25%§!\nОткрывает доступ к типу федерации §Y$spiritualist_federation$§!.\nОткрыты бонусы за стремление: §G+1§!"
+
+# ------------------------------------------------- Mercantile
+ tr_mercantile_trickle_up_economics_desc: "§YГородские районы§! дают дополнительно §Y1§! вид деятельности в категории £job_clerk£ §Y$job_clerk$§!.\n§Y$district_hab_commercial_plural$§! орбитальных поселений, §Y$district_rw_city_plural$§! мира кольца и §Y$district_arcology_housing_plural$§! экуменополиса также дополнительно дают вид деятельности в категории £job_clerk£ §Y$job_clerk$§!."
+ tr_mercantile_trickle_up_economics_gestalt: "Взаимосвязь внутри клеток"
+ tr_mercantile_trickle_up_economics_gestalt_desc: "$mod_planet_maintenancedrones_trade_value_produces_add$: §G+2§!"
+ tr_mercantile_trickle_up_economics_gestalt_delayed: "Цепочки взаимосвязанных полуэмоциональных модулей-эмуляторов на наших рабочих дронах, несомненно, увеличат нашу прибыль."
+
+ tr_mercantile_commercial_enterprise_gestalt: "Дополнительная торговая обработка"
+ tr_mercantile_commercial_enterprise_gestalt_tooltip: "£building£ Сооружения §Y$building_tec_trade_machine_1$§! и §Y$building_tec_trade_machine_stonks$§! дают дополнительно §Y1§! вид деятельности в категории £job_tec_trade_drone£ §Y$job_tec_trade_Drone$§! за уровень.\n§YКоммерческие сегменты§! мира-кольца и §Yторговые районы§! среды обитания дают тот же эффект."
+ tr_mercantile_commercial_enterprise_gestalt_delayed: "Более высокие первоначальные инвестиции приведут к повышенной прибыли для нашего коллектива."
+
+ tr_mercantile_commercial_enterprise_desc:1 "$tec_loc_amenities$ от §Y$job_trader_plural_with_icon$§!:  §G+2§! \n§Y£building£ Коммерческие здания§! и §Y£district£ Торговля-ориентированные районы§! также предоставляют дополнительные §Y$job_trader_with_icon$§!."
+
+ tr_mercantile_finish_desc: "Объем торговли: §G+10%§!\nОткрыты бонусы за стремление: §G+1§!\n\n§EСтанет доступно дерево традиций второго уровня §YХитрость§!.§!\n"
+ tr_mercantile_federations_finish_desc: "$MOD_TRADE_VALUE_MULT$: §G+10%§!\nОткрывает доступ к типу федерации §Y$trade_federation$§!.\nОткрыты бонусы за стремление: §G+1§!\n\n§EСтанет доступен второй уровень дерева традиций §YХитрость§!.§!\n"
+
+# ------------------------------------------------- Prosperity
+ tr_prosperity_finish_desc: "Ресурсы от видов £job£ деятельности: §G+5%§!\nОткрыты бонусы за стремление: §G+1§!\n\n§EСтанет доступен второй уровень дерева традиций §YХитрость§!.§!\n"
+
+# ------------------------------------------------- Subterfuge
+ tr_subterfuge_finish_desc: "В случае успеха §Yоперации§! §G50%§! стоимости уровня внедрения возвращается.\nОткрыты бонусы за стремление: §G+1§!\n\n§EСтанет доступен второй уровень дерева традиций §YКонтроль§!.§!\n"
+
+# ------------------------------------------------- Supremacy
+ tr_supremacy_finish_desc: "Открывает политики §Y«Военные доктрины»§!.\nОткрыты бонусы за стремление: §G+1§!\n\n§EСтанет доступен второй уровень дерева традиций §YМогущество§!.§!\n"
+
+# ------------------------------------------------- Synchronicity
+ tr_synchronicity_finish_desc: "$MOD_PLANETARY_ASCENSION_EFFECT_MULT$: §G+25%§!\nОткрыты бонусы за стремление: §G+1§!\n\n§EСтанет доступен второй уровень дерева традиций §YБаланс§!.§!\n"
+ tr_synchronicity_machine_finish_desc: "$MOD_PLANETARY_ASCENSION_EFFECT_MULT$: §G+25%§!\n§HОткрывает указ:§! $edict_industrial_maintenance$.\nОткрыты бонусы за стремление: §G+1§!\n\n§EСтанет доступен второй уровень дерева традиций §YБаланс§!.§!\n"
+
+# ------------------------------------------------- Unyielding
+ tr_unyielding_fortress_doctrine_nemesis: "$tr_unyielding_fortress_doctrine$"
+ tr_unyielding_finish_tooltip: "Максимум оборонительных платформ: §G+50%§!\nСодержание звездной базы: §G-20%§!\nСтоимость содержания космической базы: §G+1§!\n\n§EСтанет доступен второй уровень дерева традиций §YМогущество§!.§!\n"
+
+# ------------------------------------------------- Versatility
+ tr_versatility_adopt_tooltip: "Очки модификации машин: §G+2§!."
+ tr_versatility_adopt_synths: "$tr_versatility_adopt$"
+ tr_versatility_adopt_synths_tooltip: "Очки модификации роботов: §G+2§!."
+
+ tr_versatility_finish_tooltip: "Скорость сбора поселений: §G+15%§!\nОткрыты бонусы за стремление: §G+1§!\n\n§EСтанет доступен второй уровень дерева традиций §YИскусство управления§!.§!\n"
+
+ tr_versatility_spatial_optimization_tooltip: "£building£ §YСтоличные сооружения§! повышают параметр £housing£ жилье на §G+5%§!, вплоть до §G+20%§."
+
+# ------------------------------------------------- Aptitude
+ tr_aptitude_champions_of_the_empire_desc:1 "За каждый уровень $admiral_with_icon$ов и $general_with_icon$ов:\n$t$$MOD_COUNTRY_NAVAL_CAP_ADD$: §G+2§!\nЗа каждый уровень $governor_with_icon$ов:\n$t$$tec_loc_admin_cap$: §G+1§!\nЗа каждый уровень £scientist£ Ученых:\n$t$$MOD_LEADER_SPECIES_EXP_GAIN$: §G+0.5%§!" # $scientist_with_icon$
+
+# Psionic
+# ------------------------------------------------------------
+ tradition_tec_vanilla_psionics: "Псионика"
+ tradition_tec_vanilla_psionics_desc: "Мы стоим на пороге пробуждения истинной псионической мощи нашего вида. Наш разум готов, и мы слышим шепот о царстве за гранью нашей реальности..."
+
+ tr_psionics_adopt: "Традиции псионики"
+ tr_psionics_adopt_tooltip: "$tr_psionics_adopt_effect$"
+ tr_psionics_adopt_effect: "Позволяет немедленно связаться с §MПокровом§!"
+
+ tr_tec_vanilla_psionics_psiorigin_adopt: "Традиции псионики"
+ tr_tec_vanilla_psionics_psiorigin_adopt_tooltip: "$tr_tec_vanilla_psionics_psiorigin_adopt_effect$"
+ tr_tec_vanilla_psionics_psiorigin_adopt_effect: "§Y$tech_telepathy$§! доступна как £society£ вариант исследования."
+
+ tr_psionics_finish: "Традиции псионики завершены"
+ tr_psionics_finish_tooltip: "Покров начнет влиять на способности нашего вида на более высоком уровне, в результате чего наши псионики приобретут особые признаки."
+ tr_psionics_finish_effect: ""
+
+ tr_psionics_psi_corps: "Пси-корпус"
+ tr_psionics_psi_corps_tooltip: "$ALLOW_PSI_CORPS$\nПолучен вариант исследования:\n £society£ §Y$tech_thought_enforcement$§!"
+
+ tr_psionics_mind_readers: "Чтецы мыслей"
+ tr_psionics_mind_readers_tooltip: "$MOD_ADD_BASE_COUNTRY_INTEL$: §G+10§!\nОткрывает доступ к глобальному указу §YВзгляд в незримое§!."
+
+ tr_psionics_psionic_assimilation: "Великое пробуждение"
+ tr_psionics_psionic_assimilation_tooltip: "Все расы с признаком §Y$trait_latent_psionic$§! полностью раскроют свой псионический потенциал.\nПозволяет проводить §Yпсионическую ассимиляцию§! других рас, открывая дремлющие в них способности."
+
+ tr_psionics_breach_shroud: "Обряды вдохновения"
+ tr_psionics_breach_shroud_tooltip: "Позволяет проводить §Mвдохновленные исследования§! Покрова, которые всегда приводят к результату и значительно снижают шанс негативных исходов.\nТелепаты дополнительно предоставляют §G+5%§! $mod_planet_psionic_jobs_produces_mult$."
+
+ tr_psionics_shrouded_encryption: "Туманная коммуникация"
+ tr_psionics_shrouded_encryption_tooltip: "Базовый уровень разведки: §G+10§!\nДает £tec_edict_cap_add£ указ §MВзгляд в незримое§!." #Grants the £tec_edict_cap_add£ §MSight Beyond Sight§M Edict.
+
+# Genetic
+# ------------------------------------------------------------
+ tradition_tec_vanilla_genetics: "Генетика"
+ tradition_tec_vanilla_genetics_desc: "Естественная эволюция всегда формировалась с помощью единственного, грубого механизма: неудачи. Однако теперь мы можем определить успех."
+
+ tr_genetics_adopt: "Традиции генетики"
+	#  tr_genetics_adopt_tooltip:7 "Organic Species Modification Points: §G+3§!."
+
+ tr_genetics_finish: "Традиции генетики завершены"
+	#  tr_genetics_finish_tooltip:4 "Organic Species Modification Points: §G+3§!\n\n$TRADITIONS_FINISH_AP$"
+ tr_genetics_finish_extra_traits: "$tr_genetics_finish$"
+ tr_genetics_finish_extra_traits_tooltip: "Позволяет изучать редкие технологии §Yтрансгенезиса§!"
+
+ tr_genetics_resequencing: "Генетическое ресеквенирование"
+ tr_genetics_resequencing_tooltip: "Можно §Yдобавлять§! отрицательные признаки при модификации рас.\nМожно §Yудалять§! полезные признаки при модификации рас"
+
+ tr_genetics_creation: "Инженерия генезиса"
+ tr_genetics_creation_tooltip: "Открывает §Yулучшенные§! признаки для модификации рас.\nПозволяет ассимилировать поселения в §Yколлективный разум§! или из него."
+
+ tr_genetics_enhanced_expression: "Аллельная экспрессия"
+ tr_genetics_enhanced_expression_tooltip: "Можно §Yменять§! §Yвнешний вид§! поселений с помощью модификации рас."
+
+ tr_genetics_efficient_cloning: "Стимуляция стволовых клеток"
+ tr_genetics_efficient_cloning_tooltip: "£building£ §YСооружения клонирования§! заменяют пассивный сбор поселений и виды деятельности на §YМастера клонирования§!, который обеспечивает динамические и дополнительные £mod_pop_growth_speed£ §Yсбор органических поселений§! и £society£ §Yсоциологические§! исследования, основанные на уровне сооружения, а также предоставляет некоторое количество £unity£ §Yединства§!."
+	#"£job_tec_cloner£ Cloner jobs produce 1 extra §Y$tec_loc_organic_assembly$§!"
+
+ tr_genetics_retrovirus: "Манипуляция ретровирусами"
+
+# Cybernetics
+# ------------------------------------------------------------
+ tradition_tec_vanilla_cybernetics: "Кибернетика"
+ tradition_tec_vanilla_cybernetics_desc: "Пределы и ограничения, налагаемые на нас нашими слабыми органическими телами, просто неприемлемы. Чтобы полностью раскрыть свой потенциал, мы должны обратиться к кибернетическим имплантатам."
+
+ tr_cybernetics_adopt: "Традиции кибернетики"
+ tr_cybernetics_adopt_tooltip: "Позволяет §Yассимилировать§! органические поселения в §Hкиборгов§!.\nПоселения, проходящие §Hкибернетическую ассимиляцию§!, производят £engineering£ §Yинженерные§! и £society£ §Yсоциологические§! исследования во время и после процесса."
+ tr_cybernetics_adopt_hive_tooltip: "Позволяет §Yассимилировать§! органические поселения в §Hкиборгов§!.\nПоселения, проходящие §Hкибернетическую ассимиляцию§!, производят £engineering£ §Yинженерные§! и £society£ §Yсоциологические§! исследования во время и после процесса."
+
+ tr_cybernetics_finish: "Традиции кибернетики завершены"
+ tr_cybernetics_finish_tooltip: "Выбранные признаки расы (органики): §G+1§!\nВыбранные признаки расы (синтетики): §G+1§!\nОткрыты бонусы за стремление: §G+1§!"
+
+ tr_cybernetics_transubstantiation_synthesis: "Замещающий синтез"
+ tr_cybernetics_organ_harvesting_tooltip: "Планеты, на которых проводится §Yгеноцид§! увеличивают £mod_pop_growth_speed£ скорости сбора поселений на §G+25%§!." # TODO After AUG-28923/MR!4802 create new purge type
+
+ tr_cybernetics_metabolic_reprocessing: "Переработка метаболизма"
+ tr_cybernetics_metabolic_reprocessing_tooltip: "Размер государства от поселений киборгов: §G-10%§!"
+
+ tr_cybernetics_integrated_anatomy: "Интегрированная анатомия"
+ tr_cybernetics_integrated_anatomy_tooltip: "Выбранные признаки расы (органики): §G+1§!\nПозволяет модифицировать киборгов и роботов с §Yпризнаком кибернетики§!, §Yкибер-каркасом§! и §Yпризнаком интеграции с машинами§!.\n\nПризнаки кибернетики дают бонусы, альтернативные органическим, потребляя §Ytec_loc_energy$§! на содержание, и усиливаются уникальными кибер-каркасами, которые являются эндо/экзоскелетами.\nПризнаки интеграции с машинами могут быть объединены с органическими или кибернетическими признаками, но потребляют $tec_loc_energy$ в большом количестве."
+
+ tr_cybernetics_assembly_standards: "Механодендритальный горн"
+ tr_cybernetics_assembly_standards_tooltip: "£building£ §YСооружения сбора поселений§! заменяют пассивный сбор механических поселений и виды деятельности на §YМастер-сборщика§!, который обеспечивает динамические и дополнительные £job_roboticist£ §Yсбор неорганических поселений§!, §Y$tec_loc_engineering$§!, основанные на уровне сооружения, а также предоставляет некоторое количество §Y$tec_loc_amenities$§!.\nПозволяет собирать киборгов в сооружениях механической сборки."
+	#Unlocks £building£ §YMechadendrite Synthetizers§!.\n£building£ Mechadendrite Synthetizers replace standard assembly buildings, and assemble both £mod_planet_pop_assembly_mult£ Organic and £job_roboticist£ Robotic species without the need of jobs.\n\nGain access to Crucible Worlds.\nCrucible Worlds are a special type of colony designation which gives massive Pop Assembly bonuses.
+
+ tr_cybernetics_assembly_standards_assimilators: "Миры-Горны"
+ tr_cybernetics_assembly_standards_assimilators_desc: ""
+
+ tr_cybernetics_modular_cybernetics: "Модульная кибернетика"
+ tr_cybernetics_modular_cybernetics_tooltip: "$MOD_COUNTRY_MODIFY_SPECIES_COST_MULT$: §G-50%§!\n$tr_cybernetics_modular_cybernetics_tt$"
+ tr_cybernetics_modular_cybernetics_machine: "$tr_cybernetics_modular_cybernetics$"
+ tr_cybernetics_modular_cybernetics_machine_tooltip: "$MOD_COUNTRY_MODIFY_SPECIES_COST_MULT$: §G-50%§!\n$tr_cybernetics_assimilator_modular_cybernetics_tt$"
+ tr_cybernetics_modular_cybernetics_machine_delayed: "$tr_cybernetics_modular_cybernetics_delayed$"
+
+# Synthetic
+# ------------------------------------------------------------
+ tradition_tec_vanilla_synthetics: "Синтетика"
+ tradition_tec_vanilla_synthetics_desc: "Будущее создается от болта к болту, от схемы к схеме, от данных к данным - все это дело наших рук, наших инноваций."
+
+ tr_synthetics_adopt: "Традиции синтетиков"
+ tr_synthetics_adopt_tooltip: "Позволяет ассимилировать любых органических или механических представителей в нашу доминирующую расу.\nПоселения, проходящие §Hассимиляцию§!, обеспечивают дополнительное £unity£ §Yединство§! во время и после процесса."
+
+ tr_synthetics_finish: "Традиции синтетиков завершены"
+ tr_synthetics_finish_tooltip: "£building£ Столичные сооружения обеспечивают §G+2§! £job_roboticist£ пассивной сборки."
+
+ tr_synthetics_finish_machine: "$tr_synthetics_finish$"
+ tr_synthetics_finish_machine_tooltip: "£building£ §HСтандартные столичные сооружения§! обеспечивают §G+1§! £job_replicator£ пассивной сборки, а £building£ §Hспециализированные столичные сооружения§! увеличивают эффективность на §G25%§."
+
+ tr_synthetics_maintenance_protocols: "Повторяющиеся протоколы"
+ tr_synthetics_maintenance_protocols_tooltip: "Синтетические лидеры менее подвержены §Yфатальным недоработкам§!"
+
+ tr_synthetics_optimization_algorithms: "Алгоритмы оптимизации"
+
+ tr_synthetics_synthetic_age: "Процедурные чертежи"
+ tr_synthetics_synthetic_age_tooltip: "Выбранные признаки расы (синтетики): §G+1§!\nОткрывает несколько улучшенных §Yсинтетических признаков§!, которые предоставляют бонусы к производству от видов деятельности и могут быть объединены со стандартными признаками, позволяя лучше специализировать поселения синтетиков."
+ tr_synthetics_synthetic_age_delayed: "Совершенствование - это не выбор, это необходимость; новые модели, методы и усовершенствования требуют немедленного внедрения."
+
+ tr_synthetics_prefabricated_components: "Сборные компоненты"
+
+ tr_synthetics_solid_state_actuators: "Твердотельные актюаторы"
+ tr_synthetics_solid_state_actuators_desc: "Очки модификации механических видов: §G+3§!"
+
+ tr_synthetics_solid_state_actuators_machine: "Твердотельные актюаторы"
+ tr_synthetics_solid_state_actuators_machine_desc: "Очки модификации роботов: §G+3§!"

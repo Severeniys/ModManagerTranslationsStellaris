@@ -1,0 +1,1183 @@
+﻿l_russian:
+# Note: Also contain buildings and jobs but properly tied to the feature instead of generically done as in the other file
+
+
+
+# ------------------------------------------------------------
+# MISC
+# ------------------------------------------------------------
+
+ # ------------------------------------------------- Template
+	# Subtemplate
+  # /
+ # /
+ # ------------------------------------------------- Tooltips
+ 	tec_district_is_automated: "В этом £district£ районе §Yавтоматизировано§! производство соответствующих ресурсов в §Rобмен§! на £housing£ Жилье и £job£ Вакансии. \n\n"
+	# Habitats & menial buildings
+ 	tec_upgradeable_district_habitat: "Этот £district£ Район может обеспечить больше производства и дополнительных рабочих мест за счет §YУлучшения среды обитания§! с помощью планетарного £influence£ §YРешение§!. \n\n"
+ 	tec_building_affect_district_habitat: "Этот £district£ район подвержен влиянию обычного производства §YЗданий§! и §Yтехнологий§!. \n\n"
+
+
+ 	tec_planet_spec_change_jobs_district: "§YОбозначение планеты§! изменяет рабочие места, предоставляемые этим £district£ районом. \n\n"
+ 	tec_planet_designation_change_jobs_and_upkeep_district: "§YОбозначение планеты§! изменяет предоставляемые рабочие места и £strategic£ Содержание этого £district£ Района. \n\n"
+
+ 	tec_useless_without_upgrading_planet_jobs: "Этот район менее эффективен, чем §YСпециализация планеты§! сфокусированные версии. Вы можете улучшить свою планету с помощью §YПланетарных решений§!. \n\n"
+
+ 	tec_upgradeable_district_jobs_energy: "Этот район может увеличить производство с помощью £building£ §YЭнергетическая сеть§! здание. \n\n"
+ 	tec_upgradeable_district_jobs_minerals: "Этот район может увеличить производство с помощью £building£ §YПереработка полезных ископаемых§! строительство. \n\n"
+ 	tec_upgradeable_district_jobs_food: "Этот район может увеличить производство с помощью £building£ §YПищевая промышленность§! здание. \n\n"
+
+	#Ecoworlds
+ 	tec_upgradeable_district_jobs_research: "Этот район может обеспечить больше рабочих мест, создавая планетарный £influence£ §YРешение§!, предусматривающее §Y$tec_loc_research_resources$§! создавая рабочие места и требуя дополнительных £exotic_gases£ §YСодержание§!. \n\n"
+ 	tec_upgradeable_district_jobs_alloys: "Этот район может обеспечить больше рабочих мест, создавая планетарный £influence£ §YРешение§!, предусматривающее £alloys£ §YСплав§!, производящий рабочие места и требующий дополнительный £volatile_motes£ §YСодержание§!. \n\n"
+ 	tec_upgradeable_district_jobs_cg: "Этот район может обеспечить больше рабочих мест, создавая планетарный £influence£ §YРешение§!, предусматривающее §Y$tec_loc_consumer_goods$§! создавая рабочие места и требуя дополнительных £rare_crystals£ §YСодержание§!. \n\n"
+ # Modifiers
+ 	mod_generator_district_housing_add:  "$MOD_PLANET_HOUSING_ADD$ из фермерских районов"
+ 	mod_generator_district_buildings_add:  "$MOD_PLANET_MAX_BUILDINGS_ADD$ из фермерских районов"
+
+ 	mod_farming_district_housing_add:  "$MOD_PLANET_HOUSING_ADD$ из районов генераторов"
+ 	mod_farming_district_buildings_add:  "$MOD_PLANET_MAX_BUILDINGS_ADD$ из районов генераторов"
+ # /
+# /
+
+# ------------------------------------------------------------
+# MESSAGES & TOASTS
+# ------------------------------------------------------------
+ # ------------------------------------------------- Messages
+ 	MESSAGE_TEC_ENCASED_POPS_TITLE: "Поселения заключены в оболочку"
+ 	MESSAGE_TEC_ENCASED_POPS: "Мы преобразили $VALUE|Y$ £pops£ Поселения - это наш вид на $PLANET|Y$."
+
+ 	MESSAGE_TEC_COMPOSED_POPS_TITLE: "Составленные поселения"
+ 	MESSAGE_TEC_COMPOSED_POPS: "Мы претерпели метаморфозы $VALUE|Y$ £pops£ Поселения - это наш вид на $PLANET|Y$."
+
+ 	MESSAGE_TEC_REANIMATED_ARMIES_TITLE: "Армии реанимированы"
+ 	MESSAGE_TEC_REANIMATED_ARMIES: "Мы реанимировали в общей сложности $VALUE|Y$ £job_purge£ Армии во время битвы при $PLANET|Y$."
+
+ 	MESSAGE_TEC_MORTGAGED_TITLE: "Смертей по ипотечным кредитам"
+ 	MESSAGE_TEC_MORTGAGED: "В общей сложности у $VALUE|Y$ работников истек срок действия, и теперь они будут выплачивать свои долги как £job_purge£ Армии нежити".
+
+ 	MESSAGE_TEC_SPLICED_POPS_TITLE: "Объединенные поселения"
+ 	MESSAGE_TEC_SPLICED_POPS: "Мы соединили гены $VALUE|Y$ £pops£ Поселения должны быть такими же, как у нашего вида на $PLANET|Y$."
+
+ 	MESSAGE_TEC_METAMORPHED_POPS_TITLE: "Поселения претерпели метаморфозы"
+ 	MESSAGE_TEC_METAMORPHED_POPS: "Мы претерпели метаморфозы $VALUE|Y$ £pops£ Поселения - это наш вид на $PLANET|Y$."
+ # /
+# /
+# ------------------------------------------------------------
+# GENERIC DISTRICTS
+# ------------------------------------------------------------
+
+# ------------------------------------------------------------
+# DISTRICTS
+# ------------------------------------------------------------
+ # ------------------------------------------------- Industrial Districts
+ 	district_tec_elysium_industrial: "Элизианская промышленная аркология"
+ 	district_tec_elysium_industrial_plural: "Элизианские промышленные аркологии"
+ 	district_tec_elysium_industrial_desc: "Промышленное оборудование заполняет это планетарное кольцо, в полной мере используя преимущества низкой гравитации и просторного пространства аркологии".
+
+ 	district_tec_rw_industrial: "устарел".
+ 	district_tec_rw_industrial_plural: "."
+ 	district_tec_rw_industrial_desc: "."
+
+ 	district_tec_arcology_industrial_off: "Промышленный актив"
+ 	district_tec_arcology_industrial_off_plural: "Промышленные активы"
+ 	district_tec_arcology_industrial_off_desc: "Эти бывшие промышленные районы теперь похоронены поверх специализированных аркологий и используются в качестве складских и логистических объектов для более высоких слоев экуменополиса".
+
+ 	district_rw_megacity: "Мегаполис"
+ 	district_rw_megacity_plural: "Мегаполисы"
+ 	district_rw_megacity_desc: "???"
+ # /
+ # ------------------------------------------------- Ecoworld
+ 	district_tec_eco_arcology: "Самодостаточная аркология"
+ 	district_tec_eco_arcology_plural: "Самодостаточные аркологии"
+ 	district_tec_eco_arcology_desc: "Эти самодостаточные городские районы, объединяющие вертикальную архитектуру и озеленение, являются эффективным способом использования естественного рельефа и ресурсов для максимального увеличения плотности населения на площади суши".
+
+ 	district_tec_eco_leisure: "Культурная аркология"
+ 	district_tec_eco_leisure_plural: "Культурные аркологии"
+ 	district_tec_eco_leisure_desc: "Перепрофилированные промышленные зоны, в которых теперь размещается множество служб, придерживающихся политики использования экологически чистой энергии, безопасности и адекватной архитектуры".
+
+ 	district_tec_eco_generator: "Подсеть генератора"
+ 	district_tec_eco_generator_plural: "Подсети генератора"
+ 	district_tec_eco_generator_desc: "Расширьте подземные установки и генераторы, которые соединяют города, обеспечивая огромное количество возобновляемой и чистой энергии и предоставляя пространство для исследовательских установок".
+
+ 	district_tec_eco_mining: "Промышленный горнодобывающий район"
+ 	district_tec_eco_mining_plural: "Промышленные районы добычи полезных ископаемых"
+ 	district_tec_eco_mining_desc: "Расположенная вблизи месторождений полезных ископаемых, эта комбинация центров добычи полезных ископаемых и производства сплавов позволяет ответственно использовать мантийное бурение, получать доступ к месторождениям полезных ископаемых и непосредственно перерабатывать их, сводя к минимуму воздействие на окружающую среду и улучшая производство".
+
+ 	district_tec_eco_farming: "Экологически чистый сад"
+ 	district_tec_eco_farming_plural: "Устойчивые сады"
+ 	district_tec_eco_farming_desc: "Обширные сельскохозяйственные угодья, природные заповедники и природные сады сосуществуют с незагрязняющими промышленными предприятиями".
+ # /
+ # ------------------------------------------------- Ecumenopolis
+	#Megacorp
+ 	district_tec_arcology_trade:  0 "Коммерческая аркология"
+ 	district_tec_arcology_trade_plural:  0 "Коммерческие аркологии"
+ 	district_tec_arcology_trade_desc:  0 "Бесчисленное множество жителей живут, работают и делают покупки в высоких жилых и офисных зданиях, с массивными коммерческими комплексами, возвышающимися над этим районом".
+
+ 	district_tec_arcology_research:  0 "Академическая аркология"
+ 	district_tec_arcology_research_plural:  0 "Академические аркологии"
+ 	district_tec_arcology_research_desc:  0 "Блестящие, изысканные и ультрасовременные аркологии, где каждый может учиться, развивать навыки или проводить исследования, управляемые сетью деканов и экспертов, обеспечивающих максимальную эффективность и производство лучших научных и академических достижений".
+	#Archivist Civic
+ 	district_tec_arcology_archives:  0 "Архив-Аркология"
+ 	district_tec_arcology_archives_plural:  0 "Архив-Аркологии"
+ 	district_tec_arcology_archives_desc:  0 "Великие и удивительно тихие хранилища знаний, где гигантские объемы цифровых и физических архивов тщательно организованы, каталогизированы и защищены, причем каждая отдельная аркология является памятником настоящему, прошлому и будущему знанию".
+
+ 	district_tec_arcology_refinery:  0 "Аркология экзотических материалов"
+ 	district_tec_arcology_refinery_plural:  0 "Аркологии экзотических материалов"
+ 	district_tec_arcology_refinery_desc:  0 "Чрезвычайно безопасные подземные слои сжатых аркологий, заполненные нефтеперерабатывающими заводами, химическими лабораториями и разнообразным количеством синтезаторов и экспериментальных устройств, где самые амбициозные ученые разрабатывают новые и экзотические ресурсы. \n\n§YНеобходимы дальнейшие усилия для специализации и оптимизации этой аркологии _ _[2]__"
+
+ 	district_tec_arcology_motes:  0 "Аркология синтеза летучих частиц"
+ 	district_tec_arcology_motes_plural:  0 "Аркологии летучих пылинок"
+ 	district_tec_arcology_motes_desc:  0 "Чрезвычайно безопасные подземные слои сжатых аркологий, заполненные нефтеперерабатывающими заводами, химическими лабораториями и разнообразным количеством синтезаторов и экспериментальных устройств, где самые амбициозные ученые разрабатывают новые и экзотические ресурсы. \n\n§Yможет быть заменен другой специализированной аркологией по планетарному решению __[2]__'
+
+ 	district_tec_arcology_gases:  0 "Аркология синтеза экзотических газов"
+ 	district_tec_arcology_gases_plural:  0 "Технологии синтеза экзотических газов"
+ 	district_tec_arcology_gases_desc:  0 "Чрезвычайно безопасные подземные слои сжатых аркологий, заполненные нефтеперерабатывающими заводами, химическими лабораториями и разнообразным количеством синтезаторов и экспериментальных устройств, где самые амбициозные ученые разрабатывают новые и экзотические ресурсы. \n\n§Yможет быть заменен другой специализированной аркологией по планетарному решению __[2]__'
+
+ 	district_tec_arcology_crystals:  0 "Лаборатории кристаллического синтеза Arcology"
+ 	district_tec_arcology_crystals_plural:  0 "Лаборатории кристаллического синтеза Arcologies"
+ 	district_tec_arcology_crystals_desc:  0 "Чрезвычайно безопасные подземные слои сжатых аркологий, заполненные нефтеперерабатывающими заводами, химическими лабораториями и разнообразным количеством синтезаторов и экспериментальных устройств, где самые амбициозные ученые разрабатывают новые и экзотические ресурсы. \n\n§Yможет быть заменен другой специализированной аркологией по планетарному решению __[2]__'
+
+ 	district_tec_arcology_administrative:  0 "Административная аркология"
+ 	district_tec_arcology_administrative_plural:  0 "Административные аркологии"
+ 	district_tec_arcology_administrative_desc:  0 "Огромные ряды офисов и контор составляют этот внутренний бюрократический лабиринт, и все они работают с высочайшей производительностью, чтобы гарантировать, что управление империей осуществляется должным образом и ни один указ, политика или избыточный строительный корабль не пропадают даром".
+
+ 	district_tec_arcology_administrative_gestalt:  0 "Координационная аркология"
+ 	district_tec_arcology_administrative_gestalt_plural:  0 "Координационные аркологии"
+ 	district_tec_arcology_administrative_gestalt_desc: "Лабиринтные ряды аркологий, посвященных координации ресурсов гештальт-сознания".
+
+ 	district_tec_arcology_army:  0 "Армейская аркология"
+ 	district_tec_arcology_army_plural:  0 "Армейские аркологии"
+ 	district_tec_arcology_army_desc:  0 "эти обширные аркологии используются в буквальном смысле как бункеры, содержащие множество военной техники и сооружений, служащие укрепленной логистической позицией для контроля, развития и перераспределения военных активов".
+
+ 	district_tec_arcology_navy:  0 "Военно-морская аркология"
+ 	district_tec_arcology_navy_plural:  0 "Военно-морские аркологии"
+ 	district_tec_arcology_navy_desc:  0 "эти обширные аркологии используются для пополнения запасов, хранения или в качестве арсенала для множества военно-морских сил и солдат, размещенных на этой планете, и служат в качестве логистической позиции для контроля, развития и перераспределения военных активов".
+
+ 	district_tec_arcology_faith:  0 "Аркология веры"
+ 	district_tec_arcology_faith_plural:  0 "Аркологии веры"
+ 	district_tec_arcology_faith_desc:  0 " Высокие и великолепные аркологии с орнаментом, где преданные проявляют свою веру; возводятся здания, похожие на соборы, которые отражают яркость их тщательного и страстного убранства как проявления чистой, глубокой веры жителей".
+
+ 	district_tec_arcology_maintenance:  0 "Аркология технического обслуживания"
+ 	district_tec_arcology_maintenance_plural:  0 "Схемы технического обслуживания"
+ 	district_tec_arcology_maintenance_desc: "эти специализированные аркологии содержат множество беспилотных агентов, которые помогают в выполнении повседневных задач и повышают эффективность линий снабжения".
+
+ 	district_tec_arcology_housing_precursor:  0 "Аркология предшественников"
+ 	district_tec_arcology_housing_precursor_plural:  0 "Аркологии-предшественники"
+ 	district_tec_arcology_housing_precursor_desc:  0 'aaa'
+
+ 	district_tec_arcology_research_precursor:  0 "Аркология знаний"
+ 	district_tec_arcology_research_precursor_plural:  0 "Аркологии знаний"
+ 	district_tec_arcology_research_precursor_desc:  0 'aaa'
+
+ 	district_tec_arcology_replicator_precursor:  0 "Аркология репликатора"
+ 	district_tec_arcology_replicator_precursor_plural:  0 "Аркологии репликатора"
+ 	district_tec_arcology_replicator_precursor_desc:  0 'aaa'
+
+ 	district_tec_arcology_wonders_precursor:  0 "Аркология чудес"
+ 	district_tec_arcology_wonders_precursor_plural:  0 "Аркологии чудес"
+ 	district_tec_arcology_wonders_precursor_desc:  0 'aaa'
+ # /
+ # ------------------------------------------------- Machine World
+	# Regular
+
+
+			 job_tec_machine_technician:0  "Динамо-контроллер"
+ 			job_tec_machine_technician_plural:0  "Динамо-контроллер"
+ 			job_tec_machine_technician_desc:0  "Огромные энергетические установки по всей планете требуют постоянного наблюдения и технического обслуживания".
+ 			job_tec_machine_technician_effect_desc:0  "£job_tec_machine_technician£ $job_tec_machine_technician_plural$ генерировать §Y$tec_loc_minerals$§!."
+ 			mod_job_tec_machine_technician_add:0  "$job_tec_machine_technician$ Деятельность"
+ 			mod_job_tec_machine_technician_per_pop:0  "§G+1§! $job_tec_machine_technician$ как вид деятельности для $VALUE$  Поселения"
+ 			mod_job_tec_machine_technician_per_pop_short:0  " \n§G+1§! £mod_job_tec_machine_technician_add£ для $VALUE$ £pop£"
+
+ 			job_tec_machine_technician_drone:0  "Динамо Дрон"
+ 			job_tec_machine_technician_drone_plural:0  "Динамо Дрон"
+ 			job_tec_machine_technician_drone_desc:0  "Огромные энергетические установки по всей планете требуют постоянного наблюдения и технического обслуживания".
+ 			job_tec_machine_technician_drone_effect_desc:0  "£job_tec_machine_technician_drone£ $job_tec_machine_technician_drone_plural$ генерировать §Y$tec_loc_minerals$§!."
+ 			mod_job_tec_machine_technician_drone_add:0  "$job_tec_machine_technician_drone$ Деятельность"
+ 			mod_job_tec_machine_technician_drone_per_pop:0  "§G+1§! $job_tec_machine_technician_drone$ как вид деятельности для $VALUE$  Поселения"
+ 			mod_job_tec_machine_technician_drone_per_pop_short:0  " \n§G+1§! £mod_job_tec_hive_miner_drone_add£ для $VALUE$ £pop£"
+
+ 			job_tec_machine_miner:0  "Техник по земляным работам"
+ 			job_tec_machine_miner_plural:0  "Техники по проведению земляных работ"
+ 			job_tec_machine_miner_desc:0  "В то время как внешние слои этого мира радикально изменились, несколько слоев ресурсов требуют немедленного внимания".
+ 			job_tec_machine_miner_effect_desc:0  "£job_tec_machine_miner£ $job_tec_machine_miner_plural$ генерировать §Y$tec_loc_minerals$§!."
+ 			mod_job_tec_machine_miner_add:0  "$job_tec_machine_miner$ Деятельность"
+ 			mod_job_tec_machine_miner_per_pop:0  "§G+1§! $job_tec_machine_miner$ как вид деятельности для $VALUE$  Поселения"
+ 			mod_job_tec_machine_miner_per_pop_short:0  " \n§G+1§! £mod_job_tec_machine_miner_add£ для $VALUE$ £pop£"
+
+ 			job_tec_machine_miner_drone:0  "Экскаватор"
+ 			job_tec_machine_miner_drone_plural:0  "Экскаваторы"
+ 			job_tec_machine_miner_drone_desc:0  "Избыточный материал является препятствием для развития планеты - все должно быть переработано, а ресурсы добыты надлежащим образом".
+ 			job_tec_machine_miner_drone_effect_desc:0  "£job_tec_machine_miner_drone£ $job_tec_machine_miner_drone_plural$ генерировать §Y$tec_loc_minerals$§!."
+ 			mod_job_tec_machine_miner_drone_add:0  "$job_tec_machine_miner_drone$ Деятельность"
+ 			mod_job_tec_machine_miner_drone_per_pop:0  "§G+1§! $job_tec_machine_miner_drone$ как вид деятельности для $VALUE$  Поселения"
+ 			mod_job_tec_machine_miner_drone_per_pop_short:0  " \n§G+1§! £mod_job_tec_hive_miner_drone_add£ для $VALUE$ £pop£"
+	# /
+	# АРКОЛОГИЯ
+	 # Жилье
+ 		district_tec_machine_world_housing_regular:0  "Терминал распределения"
+ 		district_tec_machine_world_housing_regular_plural:0  "$district_tec_machine_world_housing$"
+ 		district_tec_machine_world_housing_regular_desc:0  "Несколько жилых объектов, пригодных для эффективного и утилитарного жилья и реставрации, позволяющих содержать достойное население".
+
+ 		district_tec_machine_world_housing_gestalt:0  "Связь распределения"
+ 		district_tec_machine_world_housing_gestalt_plural:0  "$district_tec_machine_world_housing$"
+ 		district_tec_machine_world_housing_gestalt_desc:0  "Несколько установок, подходящих для удобного хранения и технического обслуживания дронов, восстановления и обеспечения готовности автономных блоков".
+	 # /
+	 # Группа 0
+		# Сборка робота
+ 		district_tec_machine_world_assembly:0  "Сборочная линия"
+ 		district_tec_machine_world_assembly_plural:0  "$district_tec_machine_world_assembly$"
+ 		mod_district_tec_machine_world_assembly:0  "Макс$district_tec_machine_world_assembly_plural$"
+ 		district_tec_machine_world_assembly_desc:0  "Большой регион планеты, предназначенный для использования в миллионах самосборяющихся моделей в рамках усовершенствованной автономной линии производства Дронов".
+
+		# Органическая сборка
+ 		district_tec_machine_world_cloning:0  "Линия генезиса"
+ 		district_tec_machine_world_cloning_plural:0  "$district_tec_machine_world_cloning$"
+ 		mod_district_tec_machine_world_cloning:0  "Макс$district_tec_machine_world_cloning_plural$"
+ 		district_tec_machine_world_cloning_desc:0  "Большой регион планеты, предназначенный для размещения миллионов модулей органического развития, где происходит коррекция генетического материала и нанопроизводство органических тканей".
+	 # /
+	 # Группа 1
+ 		district_tec_machine_world_generator:0  "Сектор Динамо"
+ 		district_tec_machine_world_generator_plural:0  "$district_tec_machine_world_foundry$"
+ 		district_tec_machine_world_generator_desc:0  "Возвышающиеся генераторы наполняют эту зону планеты кудахчущим звуком энергии, текущей в воздухе".
+
+ 		district_tec_machine_world_mining:0  "Сектор земляных работ"
+ 		district_tec_machine_world_mining_plural:0  "$district_tec_machine_world_mining$"
+ 		district_tec_machine_world_mining_desc:0  "Большие карьеры и точно вырытые траншеи образуют эту область планеты, извлекая любой ценный ресурс с хирургической точностью".
+
+ 		district_tec_machine_world_maintenance:0  "Сектор технического обслуживания"
+ 		district_tec_machine_world_maintenance_plural:0  "$district_tec_machine_world_maintenance$"
+ 		district_tec_machine_world_maintenance_desc:0  "Вспомогательные станции и удаленные передатчики являются единственной достопримечательностью в этом планетарном районе, обеспечивающей нормальное функционирование остальной части колонии".
+	 # /
+	 # Группа 2
+		# Сплавы
+ 		district_tec_machine_world_foundry:0  "Производственный сектор"
+ 		district_tec_machine_world_foundry_plural:0  "$district_tec_machine_world_foundry$"
+ 		district_tec_machine_world_foundry_desc:0  "Бесконечные производители, преобразующие полезные базовые материалы в плотные рафинированные сплавы для последующего использования".
+
+		# CG
+ 		district_tec_machine_world_cgs:0  "Производственный сектор"
+ 		district_tec_machine_world_cgs_plural:0  "$district_tec_machine_world_foundry$"
+ 		district_tec_machine_world_cgs_desc:0  "ДЕЛАТЬ"
+	 # /
+	 # Группа 3
+ 		district_tec_machine_world_research:0  "Технологический сектор"
+ 		district_tec_machine_world_research_plural:0  "$district_tec_machine_world_research$"
+ 		district_tec_machine_world_research_desc:0  "ДЕЛАТЬ"
+
+ 		district_tec_machine_world_unity:0  "Сектор развития"
+ 		district_tec_machine_world_unity_plural:0  "$district_tec_machine_world_unity$"
+ 		district_tec_machine_world_unity_desc:0  "ДЕЛАТЬ"
+
+ 		district_tec_machine_world_processcap:0  "Перерабатывающий сектор"
+ 		district_tec_machine_world_processcap_plural:0  "$district_tec_machine_world_processing$"
+ 		district_tec_machine_world_processcap_desc:0  "ДЕЛАТЬ"
+
+	 # /
+	# /
+ # /
+ # ------------------------------------------------- Hive World
+	# Situation
+
+	# /
+
+	# Events
+
+	# /
+	# Modifiers
+		pm_tec_hiveworld_newborn:0 "A"
+		pm_tec_hiveworld_newborn_desc:0 "§EA.§!"
+
+		pm_tec_hiveworld_young:0 "A"
+		pm_tec_hiveworld_young_desc:0 "§EA.§!"
+
+		pm_tec_hiveworld_mature:0 "A"
+		pm_tec_hiveworld_mature_desc:0 "§EA.§!"
+
+		pm_tec_hiveworld_venerable:0 "A"
+		pm_tec_hiveworld_venerable_desc:0 "§EA.§!"
+
+		pm_tec_hiveworld_ancient:0 "A"
+		pm_tec_hiveworld_ancient_desc:0 "§EA.§!"
+	# /
+	# Biohive
+		# NOTE: Adding it here as its basically a mirror
+		district_tec_biohive_housing:0 "$district_tec_hive_world_housing_gestalt$"
+		district_tec_biohive_housing_plural:0 "$district_tec_hive_world_housing_gestalt_plural$"
+		district_tec_biohive_housing_desc:0 "$district_tec_hive_world_housing_regular_desc$"
+
+		district_tec_biohive_assembly:0 "$district_tec_hive_world_assembly$"
+		district_tec_biohive_assembly_plural:0 "$district_tec_hive_world_assembly_plural$"
+		mod_district_tec_biohive_assembly_max:0 "Max $district_tec_biohive_assembly_plural$"
+		district_tec_biohive_assembly_desc:0 "$district_tec_hive_world_assembly_desc$"
+
+			job_tec_hive_incubator:0 "Incubator Drone"
+			job_tec_hive_incubator_plural:0 "Incubator Drones"
+			job_tec_hive_incubator_desc:0 "These drones oversee and serve as caretakers of the new life of the collective."
+			job_tec_hive_incubator_effect_desc:0 "£job_tec_hive_incubator£ $job_tec_hive_incubator_plural$ generate §Y$tec_loc_energy$§!."
+			job_tec_hive_incubator_effect_nocheese_desc:0 "£job_tec_hive_incubator£ $job_tec_hive_incubator_plural$ generate §Y$tec_loc_energy$§!."
+			mod_job_tec_hive_incubator_add:0 "$job_tec_hive_incubator$ Jobs"
+			mod_job_tec_hive_incubator_per_pop:0 "§G+1§! $job_tec_hive_incubator$ Job per $VALUE$ Pops"
+			mod_job_tec_hive_incubator_per_pop_short:0 "\n§G+1§! £mod_job_tec_hive_incubator_add£ per $VALUE$ £pop£"
+
+		district_tec_biohive_industrial:0 "$district_tec_hive_world_industrial$"
+		district_tec_biohive_industrial_plural:0 "$district_tec_hive_world_industrial_plural$"
+		district_tec_biohive_industrial_desc:0 "$district_tec_hive_world_industrial_desc$"
+
+		district_tec_biohive_generator:0 "$district_tec_hive_world_generator$"
+		district_tec_biohive_generator_plural:0 "$district_tec_hive_world_generator_plural$"
+		mod_district_tec_biohive_generator_max:0 "Max $district_tec_biohive_generator_plural$"
+		district_tec_biohive_generator_desc:0 "$district_tec_hive_world_generator_desc$"
+
+		district_tec_biohive_mining:0 "$district_tec_hive_world_mining$"
+		district_tec_biohive_mining_plural:0 "$district_tec_hive_world_mining_plural$"
+		mod_district_tec_biohive_mining_max:0 "Max $district_tec_biohive_mining_plural$"
+		district_tec_biohive_mining_desc:0 "$district_tec_hive_world_mining_desc$"
+
+		district_tec_biohive_farming:0 "$district_tec_hive_world_farming$"
+		district_tec_biohive_farming_plural:0 "$district_tec_hive_world_farming_plural$"
+		mod_district_tec_biohive_farming_max:0 "Max $district_tec_biohive_farming_plural$"
+		district_tec_biohive_farming_desc:0 "$district_tec_hive_world_farming_desc$"
+	# /
+	# Regular
+		 district_tec_hive_world_housing_regular:0  "Жилое гнездо"
+ 		district_tec_hive_world_housing_regular_plural:0  "$district_tec_hive_world_housing_regular$"
+ 		district_tec_hive_world_housing_regular_desc:0  "Адаптированные полости и возвышающиеся жилые здания доминируют в ландшафте этого района, обеспечивая эффективное распределение и поддержание численности населения".
+
+ 		district_tec_hive_world_housing_gestalt:0  "Жилое гнездо"
+ 		district_tec_hive_world_housing_gestalt_plural:0  "$district_tec_hive_world_housing_gestalt$"
+ 		district_tec_hive_world_housing_gestalt_desc:0  "Приспособленные полости и возвышающиеся соединенные шпили - это то место, где собираются дроны, когда они не работают над омоложением и потреблением питательных веществ".
+
+ 		district_tec_hive_world_assembly:0  "Камера для вынашивания плода"
+ 		district_tec_hive_world_assembly_plural:0  "$district_tec_hive_world_assembly$"
+ 		mod_district_tec_hive_world_assembly_max:0  "Макс$district_tec_hive_world_assembly$"
+ 		district_tec_hive_world_assembly_desc:0  "Подповерхностные области, заполненные выводками новорожденных и растущих дронов, нуждающихся в постоянном уходе для благополучного роста и развития коллектива".
+
+ 		district_tec_hive_world_industrial:0  "Промышленный бассейн"
+ 		district_tec_hive_world_industrial_plural:0  "$district_tec_hive_world_industrial_biohive$"
+ 		district_tec_hive_world_industrial_desc:0  "Крупные промышленные свалки, кислотные бассейны и адаптированные биофабрики, где сырье перерабатывается в передовые продукты".
+
+ 		district_tec_hive_world_generator:0  "Узелок, находящийся под напряжением"
+ 		district_tec_hive_world_generator_plural:0  "$district_tec_hive_world_generator$"
+ 		district_tec_hive_world_generator_desc:0  "Часть этого мира заполнена массивными органическими электростанциями, вырабатывающими большое количество энергии".
+
+ 			job_tec_hive_technician:0  "Утилизатор энергии"
+ 			job_tec_hive_technician_plural:0  "Утилизаторы энергии"
+ 			job_tec_hive_technician_desc:0  "Эти работники безопасно поддерживают и извлекают энергию из находящихся под напряжением конкреций планеты".
+ 			job_tec_hive_technician_effect_desc:0  "£job_tec_hive_technician£ $job_tec_hive_technician_plural$ генерировать §Y$tec_loc_energy$§!."
+ 			mod_job_tec_hive_technician_add:0  "$job_tec_hive_technician$ Деятельность"
+ 			mod_job_tec_hive_technician_per_pop:0  "§G+1§! $job_tec_hive_technician$ как вид деятельности для $VALUE$  Поселения"
+ 			mod_job_tec_hive_technician_per_pop_short:0  " \n§G+1§! £mod_job_tec_hive_technician_add£ для $VALUE$ £pop£"
+
+ 			job_tec_hive_technician_drone:0  "Дрон, восстанавливающий энергию"
+ 			job_tec_hive_technician_drone_plural:0  "Дроны, восстанавливающие энергию"
+ 			job_tec_hive_technician_drone_desc:0  "Специализированные дроны, которые извлекают энергию из заряженных энергией планеты конкреций".
+ 			job_tec_hive_technician_drone_effect_desc:0  "£job_tec_hive_technician_drone£ $job_tec_hive_technician_drone_plural$ генерировать §Y$tec_loc_energy$§!."
+ 			mod_job_tec_hive_technician_drone_add:0  "$job_tec_hive_technician_drone$ Деятельность"
+ 			mod_job_tec_hive_technician_drone_per_pop:0  "§G+1§! $job_tec_hive_technician_drone$ как вид деятельности для $VALUE$  Поселения"
+ 			mod_job_tec_hive_technician_drone_per_pop_short:0  " \n§G+1§! £mod_job_tec_hive_technician_drone_add£ для $VALUE$ £pop£"
+
+ 		district_tec_hive_world_mining:0  "Шахтный карьер"
+ 		district_tec_hive_world_mining_plural:0  "$district_tec_hive_world_mining$"
+ 		district_tec_hive_world_mining_desc:0  "Массивные усики перфорируют полости, подобно чрезмерно разрастающимся корням, направляясь к богатым мантийным отложениям".
+
+ 			job_tec_hive_miner:0  "Основной Добытчик"
+ 			job_tec_hive_miner_plural:0  "Основные Добытчики"
+ 			job_tec_hive_miner_desc:0  "Руководствуясь наростами разумного мира, эти шахтеры способны достигать глубоких слоев мантии планеты".
+ 			job_tec_hive_miner_effect_desc:0  "£job_tec_hive_miner£ $job_tec_hive_miner_plural$ генерировать §Y$tec_loc_minerals$§!."
+ 			mod_job_tec_hive_miner_add:0  "$job_tec_hive_miner$ Деятельность"
+ 			mod_job_tec_hive_miner_per_pop:0  "§G+1§! $job_tec_hive_miner$ как вид деятельности для $VALUE$  Поселения"
+ 			mod_job_tec_hive_miner_per_pop_short:0  " \n§G+1§! £mod_job_tec_hive_miner_add£ для $VALUE$ £pop£"
+
+ 			job_tec_hive_miner_drone:0  "Основной горный-Дрон"
+ 			job_tec_hive_miner_drone_plural:0  "Основные горные дроны"
+ 			job_tec_hive_miner_drone_desc:0  "Инстинктивно стремясь к богатым жилам, эти дроны извлекают богатые минералы из своего разумного мира".
+ 			job_tec_hive_miner_drone_effect_desc:0  "£job_tec_hive_miner_drone£ $job_tec_hive_miner_drone_plural$ генерировать §Y$tec_loc_minerals$§!."
+ 			mod_job_tec_hive_miner_drone_add:0  "$job_tec_hive_miner_drone$ Деятельность"
+ 			mod_job_tec_hive_miner_drone_per_pop:0  "§G+1§! $job_tec_hive_miner_drone$ как вид деятельности для $VALUE$  Поселения"
+ 			mod_job_tec_hive_miner_drone_per_pop_short:0  " \n§G+1§! £mod_job_tec_hive_miner_drone_add£ для $VALUE$ £pop£"
+
+ 		district_tec_hive_world_farming:0  "Ферма на биомассе"
+ 		district_tec_hive_world_farming_plural:0  "Фермы на биомассе"
+ 		district_tec_hive_world_farming_desc:0  "Обширные регионы планеты в настоящее время являются изолированными биологическими расширениями, где биоматериал обрабатывается и перерабатывается для последующего использования".
+
+ 			job_tec_hive_farmer:0  "Комбайн для сбора биоматериала"
+ 			job_tec_hive_farmer_plural:0  "Сборщики биоматерии"
+ 			job_tec_hive_farmer_desc:0  "Богатая биомасса взаимосвязанной планеты должна быть собрана умелыми руками (или выступами (или щупальцами))".
+ 			job_tec_hive_farmer_effect_desc:0  "£job_tec_hive_farmer£ $job_tec_hive_farmer_plural$ генерировать §Y$tec_loc_food$§!."
+ 			mod_job_tec_hive_farmer_add:0  "$job_tec_hive_farmer$ Деятельность"
+ 			mod_job_tec_hive_farmer_per_pop:0  "§G+1§! $job_tec_hive_farmer$ как вид деятельности для $VALUE$  Поселения"
+ 			mod_job_tec_hive_farmer_per_pop_short:0  " \n§G+1§! £mod_job_tec_hive_farmer_add£ для $VALUE$ £pop£"
+
+ 			job_tec_hive_farmer_drone:0  "Комбайн Дрон"
+ 			job_tec_hive_farmer_drone_plural:0  "Комбайн Дрон"
+ 			job_tec_hive_farmer_drone_desc:0  "Эти дроны ласкаются и собирают богатую биомассу для удовлетворения коллективных потребностей".
+ 			job_tec_hive_farmer_drone_effect_desc:0  "£job_tec_hive_farmer_drone£ $job_tec_hive_farmer_drone_plural$ генерировать §Y$tec_loc_food$§!."
+ 			mod_job_tec_hive_farmer_drone_add:0  "$job_tec_hive_farmer_drone$ Деятельность"
+ 			mod_job_tec_hive_farmer_drone_per_pop:0  "§G+1§! $job_tec_hive_farmer_drone$ как вид деятельности для $VALUE$  Поселения"
+ 			mod_job_tec_hive_farmer_drone_per_pop_short:0  " \n§G+1§! £mod_job_tec_hive_farmer_drone_add£ для $VALUE$ £pop£"
+
+	# /
+ 	district_tec_hive_arcology_housing: "Жилые помещения"
+ 	district_tec_hive_arcology_housing_plural: "$district_tec_hive_arcology_housing$s"
+ 	district_tec_hive_arcology_housing_desc: "ЧТО НУЖНО СДЕЛАТЬ"
+	# Group 0
+ 		district_tec_hive_arcology_assembly: "Камеры для вынашивания плода"
+ 		district_tec_hive_arcology_assembly_plural: "$district_tec_hive_arcology_assembly$s"
+ 		district_tec_hive_arcology_assembly_desc: "ЧТО НУЖНО СДЕЛАТЬ"
+
+		district_tec_hive_arcology_assembly_scaling:0 "Этот район ограничен $tec_loc_capital_tier$ и $tec_loc_planet_ascensions$"
+	# /
+	# Group 1
+ 		district_tec_hive_arcology_foundry: "Промышленные камеры"
+ 		district_tec_hive_arcology_foundry_plural: "$district_tec_hive_arcology_foundry$s"
+ 		district_tec_hive_arcology_foundry_desc: "ЧТО НУЖНО СДЕЛАТЬ"
+
+ 		district_tec_hive_arcology_research: "Инновационные палаты"
+ 		district_tec_hive_arcology_research_plural: "$district_tec_hive_arcology_research$s"
+ 		district_tec_hive_arcology_research_desc: "ЧТО НУЖНО СДЕЛАТЬ"
+	# /
+	# Group 2
+ 		district_tec_hive_arcology_unity: "Камеры подключения"
+ 		district_tec_hive_arcology_unity_plural: "$district_tec_hive_arcology_unity$s"
+ 		district_tec_hive_arcology_unity_desc: "ЧТО НУЖНО СДЕЛАТЬ"
+
+		district_tec_hive_arcology_naval:0 "Боевая камера"
+		district_tec_hive_arcology_naval_plural:0 "$district_tec_hive_arcology_warfare$s"
+		district_tec_hive_arcology_naval_desc:0 "TO DO"
+	# /
+	# Group 3
+ 		district_tec_hive_arcology_maintenance: "Камеры для кормления"
+ 		district_tec_hive_arcology_maintenance_plural: "$district_tec_hive_arcology_maintenance$s"
+ 		district_tec_hive_arcology_maintenance_desc: "ЧТО НУЖНО СДЕЛАТЬ"
+	# /
+ # /
+ # ------------------------------------------------- Elysian Rings
+ 	district_tec_elysium_arcology: "Элизианская аркология"
+ 	district_tec_elysium_arcology_plural: "Элизианские аркологии"
+ 	district_tec_elysium_arcology_desc: "Ряды за рядами высокотехнологичных жилых помещений, оснащенных автономными системами и воздушными фильтрами, создают утопическую форму проживания".
+
+	# Common districts
+ 	district_tec_elysium_arcology_commercial: "Элизианская коммерческая аркология"
+ 	district_tec_elysium_arcology_commercial_plural: "Элизианская коммерческая аркология"
+ 	district_tec_elysium_arcology_commercial_desc: "Ряды за рядами высокотехнологичных жилых помещений и коммерческих зон, оснащенных автономными системами и воздушными фильтрами, служат утопической форме проживания и коммерции".
+
+ 	district_tec_elysium_nexus: "Аркология Элизианского нексуса"
+ 	district_tec_elysium_nexus_plural: "Аркологии Элизианского нексуса"
+ 	district_tec_elysium_nexus_desc: "Ряды за рядами высокотехнологичных хранилищ для технического обслуживания, оснащенных автономными системами и тепловыми фильтрами, служат очень эффективным способом хранения дронов".
+
+ 	district_tec_elysium_hive: "Елисейское гнездо-улей"
+ 	district_tec_elysium_hive_plural: "Елисейские гнезда-ульи"
+ 	district_tec_elysium_hive_desc: "Ряды за рядами органических жилищ и подземных туннелей, все подготовленные со специализированными полостями и органами для поддержания здоровой окружающей среды для Дронов".
+
+ 	district_tec_elysium_leisure: "Элизианская аркология досуга"
+ 	district_tec_elysium_leisure_plural: "Элизианские аркологии досуга"
+ 	district_tec_elysium_leisure_desc: "Подземные аркологии повторно используют некоторые из старых или непригодных для использования промышленных частей кольца для удовлетворения потребностей жителей".
+
+ 	district_tec_elysium_maintenance: "Элизианская аркология технического обслуживания"
+ 	district_tec_elysium_maintenance_plural: "Элизианские технологии технического обслуживания"
+ 	district_tec_elysium_maintenance_desc: "Подземные аркологии повторно используют некоторые из старых или непригодных для использования промышленных частей кольца для обеспечения правильного ухода за любым средством и инструментом на его поверхности".
+
+	# menial - Hab/industr/generator/farm/leisure
+ 	district_tec_elysium_generator: "Элизийский орбитальный генератор"
+ 	district_tec_elysium_generator_plural: "Элизианские орбитальные генераторы"
+ 	district_tec_elysium_generator_desc: "Генератор с широким кольцевым пролетом, предназначенный для выработки огромного количества энергии".
+
+ 	district_tec_elysium_food: "Елисейская ферма"
+ 	district_tec_elysium_food_plural: "Елисейские фермы"
+ 	district_tec_elysium_food_desc: "Участок местности шириной в кольцо, предназначенный для производства огромного количества питательной пищи и биомассы".
+
+	# Civilian - 
+	#Hab/cg/commerce/admincap/leisure - locked for gestalts 
+ 	district_tec_elysium_civil: "Аркология элизианского производства"
+ 	district_tec_elysium_civil_plural: "Элизианские технологии изготовления"
+ 	district_tec_elysium_civil_desc: "Специализированные технологии с промышленными производителями и специальными технологиями сборки, предназначенные для изготовления любой задуманной детали, товара или инструмента".
+
+ 	district_tec_elysium_administration: "Аркология Элизианской администрации"
+ 	district_tec_elysium_administration_plural: "Аркологии Элизианской администрации"
+ 	district_tec_elysium_administration_desc: "Большой комплекс бюрократических и административных парков, предназначенный для координации и контроля развития всей империи из этой аркологии".
+
+ 	district_tec_elysium_coordination: "Элизианская координационная аркология"
+ 	district_tec_elysium_coordination_plural: "Элизианские координационные аркологии"
+ 	district_tec_elysium_coordination_desc: "Большой комплекс стратегических объектов, предназначенный для размещения лучших дронов империи, обеспечивающий эффективное выполнение всех обязанностей по охране".
+
+ 	district_tec_elysium_research: "Аркология элизианских изобретений"
+ 	district_tec_elysium_research_plural: "Элизианские аркологии изобретений"
+ 	district_tec_elysium_research_desc: "Безопасные условия для изобретения, повторного использования и разработки новых технологий в изолированных и герметичных частях Элизиума"
+
+	# militarized - Hab/alloys/shipyard//leisure
+ 	district_tec_elysium_forge: "Аркология Элизианской кузницы"
+ 	district_tec_elysium_forge_plural: "Аркологии Элизианской кузницы"
+ 	district_tec_elysium_forge_desc: "Подземные технологии, использующие лучшие части промышленных активов кольца для производства большого количества высококачественных сплавов".
+
+ 	district_tec_elysium_shipyard: "Элизианская верфь"
+ 	district_tec_elysium_shipyard_plural: "Элизианские верфи"
+ 	district_tec_elysium_shipyard_desc: "Специализированные верфи и корабельные доки, где как военные подразделения, так и технические специалисты разрабатывают новые детали кораблей, обеспечивают готовность планетарной обороны и вносят вклад в тактическую и глобальную военно-морскую координацию".
+
+ 	district_tec_elysium_naval: "Елисейская цитадель"
+ 	district_tec_elysium_naval_plural: "Елисейские цитадели"
+ 	district_tec_elysium_naval_desc: "Целые города с укрепленными зданиями и военными сооружениями, где проводится большая часть военно-морских операций".
+
+	# resort
+ # /
+ # ------------------------------------------------- Ringworld
+ 	district_tec_rw_trade: "Коммерческий сегмент"
+ 	district_tec_rw_trade_plural: "Коммерческие сегменты"
+ 	district_tec_rw_trade_desc: "Городские коммерческие центры заполняют этот участок Кольцевого мира, предоставляя большое количество жилья и практичного пространства для прямой коммерции и торговых потоков".
+
+ 	district_tec_rw_replicator: "Сегмент репликатора"
+ 	district_tec_rw_replicator_plural: "Сегменты репликатора"
+ 	district_tec_rw_replicator_desc: "Сложные ультрасовременные репликаторы материи заполняют всю эту секцию Мира-Кольца, способные быстро и бесконечно преобразовывать непостижимое количество энергии в сырую материю всего за несколько секунд".
+
+ 	job_tec_matterminer: "Супервайзер синтеза материи"
+ 	job_tec_matterminer_plural: "Контролеры синтеза материи"
+ 	job_tec_matterminer_desc: "Эти работники посвящают себя надзору за производством искусственного вещества с помощью передовых технологий и его последующей экстракцией".
+ 	job_tec_matterminer_effect_desc: "£job_tec_matterminer£ $job_tec_matterminer_plural$ трансформировать §Y$tec_loc_energy$§! в §Y$tec_loc_minerals$§!."
+ 	mod_job_tec_matterminer_add: "$job_tec_matterminer$ Рабочие места"
+ 	mod_job_tec_matterminer_per_pop: "§G+1§! $job_tec_matterminer$ Задание на $VALUE$ Население"
+ 	mod_job_tec_matterminer_per_pop_short: " \n§G+1§! £mod_job_tec_matterminer_add£ за $VALUE$ £pop£"
+
+ 	job_tec_matterminer_drone: "Дрон синтеза материи"
+ 	job_tec_matterminer_drone_plural: "Дроны синтеза материи"
+ 	job_tec_matterminer_drone_desc: "Эти дроны предназначены для контроля за производством искусственного вещества с помощью передовых технологий и его последующей экстракцией".
+ 	job_tec_matterminer_drone_effect_desc: "£job_tec_matterminer_drone£ $job_tec_matterminer_drone_plural$ трансформировать §Y$tec_loc_energy$§! в §Y$tec_loc_minerals$§!."
+ 	mod_job_tec_matterminer_drone_add: "$job_tec_matterminer_drone$ Рабочие места"
+ 	mod_job_tec_matterminer_drone_per_pop: "§G+1§! $job_tec_matterminer_drone$ Задание на $VALUE$ Население"
+ 	mod_job_tec_matterminer_drone_per_pop_short: " \n§G+1§! £mod_job_tec_matterminer_drone_add£ за $VALUE$ £pop£"
+
+	# Spec 2
+ 	district_tec_rw_administrative: "Административный сегмент"
+ 	district_tec_rw_administrative_plural: "Административные сегменты"
+ 	district_tec_rw_administrative_desc: "Ряды, за рядами, за рядами административных и имперских офисов, заполненных трудолюбивыми администраторами, координирующими усилия империи на этом гигантском участке. Если и существует такая вещь, как административный ад, то это как раз тот пример".
+
+ 	district_tec_rw_administrative_gestalt: "Управляющий сегмент"
+ 	district_tec_rw_administrative_gestalt_plural: "Управляющие сегменты"
+ 	district_tec_rw_administrative_gestalt_desc: "Ряды, за рядами, за рядами специализированных строительных площадок - гештальт-расширений контроля, необходимого такому обширному сознанию".
+
+ 	district_tec_rw_research: "Экспериментальный сегмент"
+ 	district_tec_rw_research_plural: "Экспериментальный сегмент"
+ 	district_tec_rw_research_desc: "Километровые лаборатории и институты разбросаны по поверхности и внутренним частям этого мира-кольца, где можно проводить любые эксперименты или инновации, будь то в зонах невесомости мегаструктуры, отсеках безопасности или спроектированных зонах".
+
+ 	district_tec_rw_refinery: "Сегмент нефтеперерабатывающих заводов"
+ 	district_tec_rw_refinery_plural: "Сегмент нефтеперерабатывающих заводов"
+ 	district_tec_rw_refinery_desc: "Большая часть всего этого мира-кольца покрыта передовым оборудованием для химической обработки, тепловыми трубами и безопасными контейнерами, предназначенными для добычи экзотических ресурсов; менее эффективными для размещения стабильного населения, но чрезвычайно эффективными для производства".
+
+	# Spec 3
+ 	district_tec_rw_forge: "Сегмент Мегафорга"
+ 	district_tec_rw_forge_plural: "Сегмент Мегафорга"
+ 	district_tec_rw_forge_desc: "Хотя внешний вид этого сегмента может показаться неочевидным, гигантский поток жидких сплавов и промышленных процессоров скрыт от невооруженного глаза, где любая империя может превратить любое сырье, металл и списанный корабль в новые активы для роста, завоеваний или просто тщеславия".
+
+ 	district_tec_rw_industry: "Сегмент изготовителя"
+ 	district_tec_rw_industry_plural: "Сегменты изготовителя"
+ 	district_tec_rw_industry_desc: "Материалы попадают внутрь; инструменты, мебель, оружие, даже плюшевые игрушки выходят наружу. В этом разделе представлены автоматизированные репликаторы, предприятия легкой промышленности и механизированные фабрики, которые собирают и тиражируют любой образец с исключительной эффективностью."
+
+ 	district_tec_rw_naval: "Военно-Космический сегмент"
+ 	district_tec_rw_naval_plural: "Военно-Космический сегмент"
+ 	district_tec_rw_naval_desc: "Этот сегмент полон военной промышленности, сборщиков корабельных компонентов и разнообразных бастионов военно-морской координации, производящих активы и осуществляющих стратегическую координацию для ведения военных действий империи в гигантских масштабах".
+
+	# Add
+ 	district_tec_rw_leisure: "Утопический сегмент"
+ 	district_tec_rw_leisure_plural: "Утопический сегмент"
+ 	district_tec_rw_leisure_desc: "Независимо от того, как, кем или чем вы являетесь, эти аркологии наполнены чрезвычайно продвинутыми системами транспорта, развлечений и воспитания, позволяющими любому жителю наслаждаться благами приятного существования".
+
+ 	district_tec_rw_maintenance: "Сегмент технического обслуживания"
+ 	district_tec_rw_maintenance_plural: "Сегменты технического обслуживания"
+ 	district_tec_rw_maintenance_desc: "Этот сегмент ringworld служит гигантским центром логистики и вспомогательной выработки электроэнергии, обеспечивая техническое обслуживание и поддержку кольца".
+
+	# Future
+ 	district_tec_rw_precursor: "Утопический сегмент"
+ 	district_tec_rw_precursor_plural: "Утопический сегмент"
+ 	district_tec_rw_precursor_desc: "Независимо от того, как, кем или чем вы являетесь, эти аркологии наполнены чрезвычайно продвинутыми системами транспорта, развлечений и воспитания, позволяющими любому жителю наслаждаться благами приятного существования".
+ # /
+ # ------------------------------------------------- Aquatic DLC and planets
+ 	district_tec_aqua_housing: "A"	# unused
+ 	district_tec_aqua_housing_plural: "A"
+ 	district_tec_aqua_housing_desc: "A."
+
+ 	district_tec_aqua_industrial: "A"	# unused
+ 	district_tec_aqua_industrial_plural: "A"
+ 	district_tec_aqua_industrial_desc: "A."
+
+ 	district_tec_aqua_generator: "Район Гидродинамо"
+ 	district_tec_aqua_generator_plural: "Районы гидродинамики"
+ 	district_tec_aqua_generator_desc: "Специализированные генераторы, расположенные вблизи подводных вулканов и термальных источников, оба используют высокие давления для получения конденсированных изотопов и геотермальной энергии".
+ 	district_tec_aqua_generator_ecu_desc: "Специализированные генераторы, расположенные вблизи подводных вулканов и термальных источников, возникающие из руин предыдущих аркологий, оба используют высокие давления для получения конденсированных изотопов и геотермальной энергии".
+
+ 	district_tec_aqua_mining: "Район Петро-Риф"
+ 	district_tec_aqua_mining_plural: "Районы Петро-рифов"
+ 	district_tec_aqua_mining_desc: "Обширные регионы этой планеты заполнены постоянно расширяющимися рифами, которые естественным образом перерабатывают субстраты и превращают их в ценные минералы или непосредственно обнажают богатые жилы для добычи".
+ 	district_tec_aqua_mining_ecu_desc: "Обширные подводные аркологии этой планеты теперь заполнены постоянно расширяющимся рифом, который естественным образом перерабатывает субстраты и превращает их в ценные минералы или непосредственно обнажает богатые жилы для добычи".
+
+ 	district_tec_aqua_farming: "Район морских ферм"
+ 	district_tec_aqua_farming_plural: "Районы морских ферм"
+ 	district_tec_aqua_farming_desc: "Бесконечные просторы морского дна, заполненные богатой флорой и фауной, процветающие на глубинах со стабильной экосистемой, пригодные для использования в качестве возобновляемого источника биомассы".
+ 	district_tec_aqua_farming_desc_ecu: "Бесконечные продолжения бывших разрушенных аркологий теперь являются частью морского дна, заполненного богатой флорой и фауной, процветающей в глубинах со стабильной экосистемой, пригодной для использования в качестве возобновляемого источника биомассы".
+
+	# for ecoworlds
+ 	district_tec_eco_aqua_generator: "Район Эко-Динамо"
+ 	district_tec_eco_aqua_generator_plural: "Районы Эко-Динамо"
+ 	district_tec_eco_aqua_generator_desc: "$district_tec_aqua_generator_desc$"
+
+ 	district_tec_eco_aqua_mining: "Эко-район Птро-Риф"
+ 	district_tec_eco_aqua_mining_plural: "Районы Эко-рифов"
+ 	district_tec_eco_aqua_mining_desc: "$district_tec_aqua_mining_desc$"
+
+ 	district_tec_eco_aqua_farming: "Эко-район Морской фермы"
+ 	district_tec_eco_aqua_farming_plural: "Эко-районы морских ферм"
+ 	district_tec_eco_aqua_farming_desc: "$district_tec_aqua_farming_desc$"
+
+	# specific jobs
+ 	job_tec_reef_miner: "Добытчик лито-рифов"
+ 	job_tec_reef_miner_plural: "Добытчик лито-рифов"
+ 	job_tec_reef_miner_desc: "Используя традиционные методы возделывания, эти шахтеры засевают и извлекают богатые участки литорефов, обеспечивая неиссякаемый поток высокообогащенных минералов".
+ 	job_tec_reef_miner_effect_desc: "['concept_tec_worker_job_tec_reef_miner_plural_icon'] производить §Y$tec_loc_minerals$§! и §Y$tec_loc_trade_value$§!."
+ 	mod_job_tec_reef_miner_add: "$job_tec_reef_miner$ Рабочие места"
+ 	mod_job_tec_reef_miner_per_pop: "§G+1§! $job_tec_reef_miner$ Задание на $VALUE$ Население"
+ 	mod_job_tec_reef_miner_per_pop_short: " \n§G+1§! £mod_job_tec_reef_drone_add£ за $VALUE$ £pop£"
+
+ 	job_tec_thermogenerator_drone: "Дрон Термогенератор"
+ 	job_tec_thermogenerator_drone_plural: "Дрон Термогенератор"
+ 	job_tec_thermogenerator_drone_desc: "Термогенераторные дроны поддерживают и контролируют инфраструктуру глубоко в океанских глубинах, вырабатывая энергию за счет процессов термогенерации там, внизу".
+ 	job_tec_thermogenerator_drone_effect_desc: "['concept_tec_worker_job_tec_thermogenerator_drone_plural_icon'] производить §Y$tec_loc_energy$§! и §Y$tec_loc_amenities_gestalt$§!."
+ 	mod_job_tec_thermogenerator_drone_add: "$job_tec_thermogenerator_drone$ Рабочие места"
+ 	mod_job_tec_thermogenerator_drone_per_pop: "§G+1§! $job_tec_thermogenerator_drone$ Задание на $VALUE$ Население"
+ 	mod_job_tec_thermogenerator_drone_per_pop_short: " \n§G+1§! £mod_job_technician_drone_add£ за $VALUE$ £pop£"
+
+ 	job_tec_hydrorelay_drone: "Гидрорелейный Дрон"
+ 	job_tec_hydrorelay_drone_plural: "Гидрорелейные дроны"
+ 	job_tec_hydrorelay_drone_desc: "Дроны, предназначенные для обзора, обслуживания и обеспечения постоянного потока производства изотопов водорода".
+ 	job_tec_hydrorelay_drone_effect_desc: "['concept_tec_specialist_job_tec_hydrorelay_drone_plural_icon'] производить §Y$tec_loc_physics$§! и §Y$tec_loc_amenities_gestalt$§!."
+ 	mod_job_tec_hydrorelay_drone_add: "$job_tec_hydrorelay_drone$ Рабочие места"
+ 	mod_job_tec_hydrorelay_drone_per_pop: "§G+1§! $job_tec_hydrorelay_drone$ Задание на $VALUE$ Население"
+ 	mod_job_tec_hydrorelay_drone_per_pop_short: " \n§G+1§! £mod_job_tec_hydrorelay_drone_add£ за $VALUE$ £pop£"
+
+ 	job_tec_aqua_drone: "Аквадрон"
+ 	job_tec_aqua_drone_plural: "Аквадроны"
+ 	job_tec_aqua_drone_desc: "Специализированные дроны с задачей ухода, лелеяния и контроля подводного производства биомассы".
+ 	job_tec_aqua_drone_effect_desc: "['concept_tec_worker_job_tec_aqua_drone_plural_icon'] производить §Y$tec_loc_food$§! и §Y$tec_loc_amenities_gestalt$§!."
+ 	mod_job_tec_aqua_drone_add: "$job_tec_aqua_drone$ Рабочие места"
+ 	mod_job_tec_aqua_drone_per_pop: "§G+1§! $job_tec_aqua_drone$ Задание на $VALUE$ Население"
+ 	mod_job_tec_aqua_drone_per_pop_short: " \n§G+1§! £mod_job_angler_add£ за $VALUE$ £pop£"
+
+ 	job_tec_reef_drone: "Риф Дрон"
+ 	job_tec_reef_drone_plural: "Рифовые дроны"
+ 	job_tec_reef_drone_desc: "Специализированные дроны с задачей ухода, лелеяния и контроля обширных нефтяных месторождений, сбора богатых материалов и минералов".
+ 	job_tec_reef_drone_effect_desc: "['concept_tec_worker_job_tec_reef_drone_plural_icon'] производить §Y$tec_loc_minerals$§! и §Y$tec_loc_amenities_gestalt$§!."
+ 	mod_job_tec_reef_drone_add: "$job_tec_reef_drone$ Рабочие места"
+ 	mod_job_tec_reef_drone_per_pop: "§G+1§! $job_tec_reef_drone$ Задание на $VALUE$ Население"
+ 	mod_job_tec_reef_drone_per_pop_short: " \n§G+1§! £mod_job_tec_reef_drone_add£ за $VALUE$ £pop£"
+
+ 	job_tec_depth_drone: "Глубиный Дрона"
+ 	job_tec_depth_drone_plural: "Глубиные дроны"
+ 	job_tec_depth_drone_desc: "Эти дроны обитают в темных и глубоководных районах вблизи морского дна, патрулируя и обеспечивая стабильность и процветание подводных колоний".
+ 	job_tec_depth_drone_effect_desc:  "['concept_tec_specialist_job_tec_depth_drone'] потребляет [tec_food_or_equivalent_upkeep] и генерирует небольшое количество [job_tec_depth_drone_growth] и уменьшает £crime£ §YОтклонение§! "
+ 	mod_job_tec_depth_drone_add: "$job_tec_depth_drone$ Рабочие места"
+ 	mod_job_tec_depth_drone_per_pop: "§G+1§! $job_tec_depth_drone$ Задание на $VALUE$ Население"
+ 	mod_job_tec_depth_drone_per_pop_short: " \n§G+1§! £mod_job_tec_depth_drone_add£ за $VALUE$ £pop£"
+ # /
+ # ------------------------------------------------- Protoworlds
+ 	tec_upgradeable_district_adds_energy: "Этот район может производить дополнительные §Y$tec_loc_energy$§! и извлекает выгоду из §Y$mod_base_planet_technician$§Yмодификаторы. \n\n"
+ 	tec_upgradeable_district_adds_minerals: "Этот район может производить дополнительные §Y$tec_loc_minerals$§! и извлекает выгоду из §Y$mod_base_planet_miners$§Yмодификаторы. \n\n"
+ 	tec_upgradeable_district_adds_food: "Этот район может производить дополнительные §Y$tec_loc_food$§! и извлекает выгоду из §Y$mod_base_planet_farmers$§Yмодификаторы.. \n\n"
+
+ 	tec_protoworld_energy_district: "§EСпособствует §Hзасушливости§! планеты.§!"
+ 	tec_protoworld_mineral_district: "§EСпособствует §Bохлаждению§! планеты.§!"
+ 	tec_protoworld_food_district: "§EСпособствует §Gоазификации§! планеты.§!"
+
+ 	building_tec_protoworld_capital: "Управление терраформированием"
+ 	building_tec_protoworld_capital_desc: "Безопасная среда обитания, заполненная бюрократическими и техническими кабинетами, которая контролирует управление, техническое обслуживание и процесс терраформирования этого мира".
+ 	requires_tec_protoworld_capital_capital: "§RТребует §Y$building_tec_protoworld_capital$§! на планете.§!"
+
+ 	building_tec_protoworld_capital_2: "Управление терраформированием"
+ 	building_tec_protoworld_capital_2_desc: "Продвинутое и обширное поселение, заполненное бюрократическими и техническими офисами, которые контролируют управление, техническое обслуживание и процесс терраформирования этого мира".
+ 	requires_tec_protoworld_capital_2_capital: "§RТребует §Y$building_tec_protoworld_capital_2$§! на планете.§!"
+	# Upgrading this building starts the second step 
+ 	tec_protoworld_building_starts_terra: "§EМодернизация этого здания положит начало последнему этапу терраформирования планеты.§!"
+
+ 	district_tec_proto_city: "Изолированная среда обитания"
+ 	district_tec_proto_city_plural: "Изолированные места обитания"
+ 	district_tec_proto_city_desc: "После первых шагов по терраформированию эти герметичные места обитания оказались хорошим способом обезопасить новых обитателей планеты от опасностей внешней среды и обеспечить их любой потребностью".
+
+ 	district_tec_proto_industrial: "Зона промышленной подготовки"
+ 	district_tec_proto_industrial_plural: "Зона промышленной подготовки"
+ 	district_tec_proto_industrial_desc: "Обширные участки местности, подготовленные к проектированию в качестве промышленных секций и районов в будущем, в настоящее время используются только в качестве складских помещений и базовой неплодородной инфраструктуры".
+ 	mod_district_tec_proto_industrial_max: "Макс. £district£ $district_tec_proto_industrial$"
+
+ 	district_tec_proto_generator: "Магнитный ионизатор"
+ 	district_tec_proto_generator_plural: "Магнитные ионизаторы"
+ 	district_tec_proto_generator_desc: "Эти региональные установки не только генерируют огромное количество энергии, но и стабилизируют магнитное поле планеты, передавая энергию как в ядро, так и в атмосферу, ионизируя воздух и производя воздух, пригодный для дыхания, и воспламеняя ядро за счет остаточной энергии".
+ 	mod_district_tec_proto_generator_max: "Макс. £district£ $district_tec_proto_generator$"
+
+ 	district_tec_proto_mining: "Карбонатный комбайн"
+ 	district_tec_proto_mining_plural: "Переработчики карбоната"
+ 	district_tec_proto_mining_desc: "Автоматизированные рудники, в которых автоматизированное оборудование добывает полезные ископаемые и использует необработанный материал в качестве горючего, смешанный с синтетической или экстрагированной водой, для создания плотных газов, фильтрации загрязняющих веществ, создавая своего рода парниковый эффект, обогащая атмосферу за счет карбонизации".
+ 	mod_district_tec_proto_mining_max: "Макс. £district£ $district_tec_proto_mining$"
+
+ 	district_tec_proto_farming: "Биосферные купола"
+ 	district_tec_proto_farming_plural: "Биосферные купола"
+ 	district_tec_proto_farming_desc: "Закрытые районы, где в искусственных теплицах находятся целые джунгли и поля с улучшенной флорой и микроорганизмами, адаптированными для производства больших количеств биомассы и устойчивыми к условиям планеты, где они расположены, или служат просто для местного производства".
+ 	mod_district_tec_proto_farming_max: "Макс. £district£ $district_tec_proto_farming$"
+
+ 	district_tec_proto_hive: "Безопасное гнездо"
+ 	district_tec_proto_hive_plural: "Безопасные гнезда"
+ 	district_tec_proto_hive_desc: "Делать".
+
+ 	district_tec_proto_generator_hive: "Область электромиазма"
+ 	district_tec_proto_generator_hive_plural: "Область электромиазма"
+ 	district_tec_proto_generator_hive_desc: "Делать".
+
+ 	district_tec_proto_mining_hive: "Извлекающий усик"
+ 	district_tec_proto_mining_hive_plural: "Извлекающие усики"
+ 	district_tec_proto_mining_hive_desc: "Делать".
+
+ 	district_tec_proto_farming_hive: "Яма для биомассы"
+ 	district_tec_proto_farming_hive_plural: "Ямы для биомассы"
+ 	district_tec_proto_farming_hive_desc: "Делать".
+
+	# Messages
+ 	MESSAGE_TEC_PROTO_HOT_1_TITLE: "Потепление Протомира"
+ 	MESSAGE_TEC_PROTO_HOT_1: "Поверхность $PLANET|Y$ испытывает быстрое засушивание, вызванное ионизацией атмосферы".
+ 	MESSAGE_TEC_PROTO_HOT_2_TITLE: "Потепление Протомира"
+ 	MESSAGE_TEC_PROTO_HOT_2: "Поверхность $PLANET|Y$ испытывает чрезвычайную засушливость, вызванную ионизацией атмосферы".
+ 	MESSAGE_TEC_PROTO_HOT_3_TITLE: "Потепление Протомира"
+ 	MESSAGE_TEC_PROTO_HOT_3: "$PLANET|Y$ быстро меняется на более теплый планетарный тип".
+
+ 	MESSAGE_TEC_PROTO_WET_1_TITLE: "Оазисирующий протомир"
+ 	MESSAGE_TEC_PROTO_WET_1: "Поверхность $PLANET|Y$ испытывает быстрое увеличение плотности атмосферы, вызванное действиями разнообразных микроорганизмов, более богатой биосферой и стабильной гидрологией".
+ 	MESSAGE_TEC_PROTO_WET_2_TITLE: "Оазисирующий протомир"
+ 	MESSAGE_TEC_PROTO_WET_2: "Поверхность $PLANET|Y$ испытывает экстремальное увеличение плотности атмосферы, вызванное действиями разнообразных микроорганизмов, более богатой биосферой и сверхстабильной гидрологией".
+ 	MESSAGE_TEC_PROTO_WET_3_TITLE: "Оазисирующий протомир"
+ 	MESSAGE_TEC_PROTO_WET_3: "$PLANET|Y$ быстро превращается в гидроустойчивый планетарный тип".
+
+ 	MESSAGE_TEC_PROTO_COLD_1_TITLE: "Охлаждающийся протомир"
+ 	MESSAGE_TEC_PROTO_COLD_1: "Поверхность $PLANET|Y$ испытывает быстрое охлаждение, вызванное повышенным промышленным выбросом более плотных материалов в атмосферу".
+ 	MESSAGE_TEC_PROTO_COLD_2_TITLE: "Охлаждающийся протомир"
+ 	MESSAGE_TEC_PROTO_COLD_2: "Поверхность $PLANET|Y$ испытывает экстремальное охлаждение, вызванное повышенным промышленным газообразованием и выбросом более плотных материалов в атмосферу".
+ 	MESSAGE_TEC_PROTO_COLD_3_TITLE: "Охлаждающийся протомир"
+ 	MESSAGE_TEC_PROTO_COLD_3: "$PLANET|Y$ быстро превращается в более холодный пригодный для жизни планетарный тип".
+
+ 	MESSAGE_TEC_TERRAFORMATION_TITLE: "Терраформирование"
+ 	MESSAGE_TEC_TERRAFORMATION: "$PLANET|Y$ был терраформирован"
+	# into a $PLANET_CLASS|Y$."
+ 	MESSAGE_TEC_TERRAFORMATION_CANCELED: "Процесс терраформирования на $PLANET|Y$ был прерван!"
+ 	MESSAGE_TEC_TERRAFORM_MESSAGE_TYPE_TITLE: "Терраформирование"
+ # /
+ # ------------------------------------------------- Arkship (Origin)
+ 	district_tec_ark_housing: "Жилые помещения"
+ 	district_tec_ark_housing_plural: "Жилые помещения"
+ 	district_tec_ark_housing_desc: "Элементарные помещения станции для временного проживания с минимальными услугами и удобствами".
+
+ 	district_tec_ark_reclamation: "Мелиоративные кварталы"
+ 	district_tec_ark_reclamation_plural: "Мелиоративные кварталы"
+ 	district_tec_ark_reclamation_desc: "Полупромышленные отсеки для переработки и извлечения ценных товаров, найденных во время путешествия или собранных с близлежащих небесных тел".
+
+ 	district_tec_ark_pathfinder: "Кварталы поиска пути"
+ 	district_tec_ark_pathfinder_plural: "Кварталы поиска пути"
+ 	district_tec_ark_pathfinder_desc: "Сектора станции предназначены для размещения команды специализированных следопытов, задачей которых является обнаружение полезных планет или товаров, или потенциальных угроз империи".
+
+ 	district_tec_ark_research: "Исследовательские помещения"
+ 	district_tec_ark_research_plural: "Жилые модули"
+ 	district_tec_ark_research_desc: "Секторы станции предназначены для импровизации и повторного открытия технологических достижений".
+
+ 	district_tec_ark_control: "Административные помещения"
+ 	district_tec_ark_control_plural: "Модули администрирования"
+ 	district_tec_ark_control_desc: "Секторы станции предназначены для контроля за развитием процессов колонизации и де-стазиса населения".
+ # /
+ # ------------------------------------------------- Decandet Ecu (Origin)
+ 	district_tec_decadent_generator: "Разрушающийся генератор"
+ 	district_tec_decadent_generator_desc: "Разрушающиеся генераторы"
+ 	district_tec_decadent_generator_plural: "Древние исследовательские установки теперь перепрофилированы в многофункциональные генераторы энергии и динамо-машины".
+
+ 	district_tec_decadent_mining: "Наземная мина"
+ 	district_tec_decadent_mining_desc: "Наземные мины"
+ 	district_tec_decadent_mining_plural: "Погребенные в самых темных районах экуменополиса, эти установки перерабатывают все, что осталось от первоначальной земной коры и разрушенных зданий, которые образуют бесконечную свалку металлолома".
+
+ 	district_tec_decadent_farming: "Гидропонная башня"
+ 	district_tec_decadent_farming_desc: "Гидропонные башни"
+ 	district_tec_decadent_farming_plural: "Раньше используемые в качестве процветающих и роскошных башен, каркасы этих сооружений теперь служат для выращивания биомассы для поддержания большого населения".
+ # /
+ # ------------------------------------------------- Biomorph
+ 	district_tec_biomorph_hive_housing: "Логово роя"
+ 	district_tec_biomorph_hive_housing_plural: "Роевые логова"
+ 	district_tec_biomorph_hive_housing_desc: "."
+
+ 	district_tec_biomorph_hive_alloys: "Бассейн для Биоформ"
+ 	district_tec_biomorph_hive_alloys_plural: "Бассейны для биоформ"
+ 	district_tec_biomorph_hive_alloys_desc: "Кислотные бассейны, где богатое биоматериал затвердевает и кальцифицируется для превращения в пригодные для использования сплавы на органической основе".
+
+ 	district_tec_biomorph_hive_geothermal: "Геотермальная яма"
+ 	district_tec_biomorph_hive_geothermal_plural: "Геотермальные ямы"
+ 	district_tec_biomorph_hive_geothermal_desc: "Вырубленные глубоко в земной коре, эти разработки используются для добычи ценных минеральных ресурсов и использования давления и тепла для использования энергии, выбрасываемой на поверхность планеты".
+
+ 	district_tec_biomorph_hive_farming: "Увеличение биомассы"
+ 	district_tec_biomorph_hive_farming_plural: "Расширение биомассы"
+ 	district_tec_biomorph_hive_farming_desc: "Большие поля подвергшегося воздействию биологического вещества преобразуются под действием бактерий в пригодное для использования биоматериал".
+
+ 	district_tec_biomorph_hive_pods: "Ухаживающий модуль"
+ 	district_tec_biomorph_hive_pods_plural: "Уход за стручками"
+ 	district_tec_biomorph_hive_pods_desc: "Подземные полости, где за дронами ухаживают, получают уход, техническое обслуживание или непосредственно выводятся".
+
+ 	district_tec_biomorph_hive_arcology: "Роевая колония"
+ 	district_tec_biomorph_hive_arcology_plural: "Роевая колония"
+ 	district_tec_biomorph_hive_arcology_desc: "А".
+
+ 	district_tec_biomorph_hive_forge: "Море Биоформ"
+ 	district_tec_biomorph_hive_forge_plural: "Моря Биоформ"
+ 	district_tec_biomorph_hive_forge_desc: "А".
+
+	district_tec_biomorph_hive_geothermal:0 "Нервная полость"
+	district_tec_biomorph_hive_geothermal_plural:0 "Нейронных полостей"
+	district_tec_biomorph_hive_geothermal_desc:0 "A."
+
+	district_tec_biomorph_hive_farming:0 "Координационный узел"
+district_tec_biomorph_hive_farming_plural:0 "Координационные узлы"
+	district_tec_biomorph_hive_farming_desc:0 "A."
+
+	district_tec_biomorph_hive_pods:0 "Репродуктивная камера"
+	district_tec_biomorph_hive_pods_plural:0 "Репродуктивные камеры"
+	district_tec_biomorph_hive_pods_desc:0 "A."
+ # /
+# /
+
+# ---------------------------------------------------------------
+# HABITAT REWORK
+# ---------------------------------------------------------------
+ # ------------------------------------------------- Habitats
+ 	habitat_0_void_MEGASTRUCTURE_DETAILS: "An §Y$pc_habitat$§! это теоретически самоподдерживающаяся космическая станция, предназначенная для постоянного проживания."
+ 	habitat_0_void_CONSTRUCTION_INFO_DELAYED: 4 "Среда обитания может содержать только специфичные для нее объекты §Y$tec_loc_buildings$§!. Если он построен на орбите над планетой с §Y$tec_loc_minerals$§!, §Y$tec_loc_energy$§!, или §Y$tec_loc_research_resources$§! депозиты, специальные §Y$tec_loc_districts$§! будет доступен".
+ 	habitat_0_void: "Среда обитания"
+ 	habitat_0_void_DESC: "Жилая станция, вращающаяся вокруг непригодной для жизни планеты, способная разместить ряд §HПоселений§! и §Hзданий§! вдали от поверхности".
+
+ 	habitat_growth_effect_desc: "§YИз-за предварительных задач и усилий, необходимых для того, чтобы сделать среду обитания подходящей для большей популяции, потенциальная скорость роста популяции составляет§! §Rуменьшенный вдвое§!. \n\n"
+ # /
+ # ------------------------------------------------- Habitat Autoassembler
+ 	building_tec_hab_orbital_autobuilder: "Орбитальный ассемблер"
+ 	building_tec_hab_orbital_autobuilder_plural: "Орбитальные сборщики"
+ 	building_tec_hab_orbital_autobuilder_desc: "Сборщики с низкой гравитацией, созданные для проектирования, печати, сборки и перемещения орбитальных установок внутри системы автоматизированным и расширяемым способом".
+
+ 	building_tec_hab_orbital_autobuilder_require_available_orbitals: "$TRIGGER_FAIL$§RТребуются доступные планеты, подходящие для §Yорбиталей§!, такие как те, которые не имеют аномалий, не являются мегаструктурами или не окружены мусором.§!"
+
+ 	building_tec_hab_orbital_autobuilder_default_effect: "Это £building£ Здание автоматически соберет §YОрбитали§! вокруг подходящих планет в системе, увеличивая ее §R£alloys£ Содержание§! во время этот процесс. \n"
+ 	building_tec_hab_orbital_autobuilder_major_effect: "Это £building£ Здание автоматически соберет §YОрбиталей§! вокруг подходящих планет в системе, отдавая приоритет §YОсновным орбиталям§!, увеличивая его §R£alloys£ Поддерживайте§! во время процесса. \n"
+ 	building_tec_hab_orbital_autobuilder_minor_effect: "Это £building£ Здание автоматически соберет §YОрбиталей§! вокруг подходящих планет в системе, отдавая приоритет §YВторостепенным орбиталям§!, увеличивая его §R£alloys£ Поддерживайте§! во время процесса. \n"
+
+ 	building_tec_hab_orbital_autobuilder_building_minor_orbital: "Завершит текущую §HМалую орбиту§! на §Y[Planet.tec_building_minor_orbital_timer]§!."
+ 	building_tec_hab_orbital_autobuilder_building_major_orbital: "Завершит текущую §HОсновную орбиту§! на §Y[Planet.tec_building_major_orbital_timer]§!."
+ 	building_tec_hab_orbital_autobuilder_building_no_orbital: "§RНа данный момент нет никаких возможных орбиталей для построения. \n§YОбслуживание отключено§!.§! \n Повторная проверка на §Y[Planet.tec_building_no_orbital_timer]§!."
+
+ 	building_tec_hab_orbital_autobuilder_current_orbitals: " \n Тот §Y[solar_system.GetName]§! Система может поддерживать: $TABBED_NEW_LINE$ Основные орбитали: §Y[solar_system.GetNumMajorOrbitals]/[solar_system.GetMaxMajorOrbitals]§! $TABBED_NEW_LINE$ Второстепенные орбитали: §Y[solar_system.GetNumMinorOrbitals]/[solar_system.GetMaxMinorOrbitals]§!"
+
+ 	decision_tec_orbital_autobuilder_focus_mixed: "Автоматизация орбитальной сборки - Смешанная"
+ 	decision_tec_orbital_autobuilder_focus_mixed_desc: "Определяет приоритетность создания §YОсновных орбиталей§! на подходящих планетах".
+ 	decision_tec_orbital_autobuilder_focus_mixed_effects: "Случайное создание орбиты"
+
+ 	decision_tec_orbital_autobuilder_focus_major: "Автоматизация сборки орбит - Основные орбитали"
+ 	decision_tec_orbital_autobuilder_focus_major_desc: "Определяет приоритетность создания §YОсновных орбиталей§! на подходящих планетах".
+ 	decision_tec_orbital_autobuilder_focus_major_effects: "Приоритетное §YСоздание главной орбиты§!"
+
+ 	decision_tec_orbital_autobuilder_focus_minor: "Автоматизация сборки орбит - Малые орбитали"
+ 	decision_tec_orbital_autobuilder_focus_minor_desc: "Определяет приоритетность образования §Yмалых орбиталей§! на подходящих планетах".
+ 	decision_tec_orbital_autobuilder_focus_minor_effects: "Приоритетное §YСоздание малой орбиты§!"
+
+ # /
+ # ------------------------------------------------- Menial Orbital Buildings
+ 	building_tec_hab_mineral_processor_1: "Процессор орбитальной добычи минералов"
+ 	building_tec_hab_mineral_processor_1_plural: "Процессоры орбитального добычи минералов"
+ 	building_tec_hab_mineral_processor_1_desc: "Большие орбитальные модули, перепрофилированные для адаптации к процессам добычи полезных ископаемых, их переработки и транспортировки в логистические центры".
+ 	building_tec_hab_mineral_processor_effect: "Это £building£ Здание обеспечит дополнительные §Y$tec_loc_housing$§! и §Y£job_miner£ Майнинг§! масштабирование заданий в зависимости от количества из §Y£district£ $district_tec_hab_extraction_plural$§!."
+
+ 	building_tec_hab_energy_processor_1: "Орбитальная генераторная сеть"
+ 	building_tec_hab_energy_processor_1_plural: "Орбитальные генераторные решетки"
+ 	building_tec_hab_energy_processor_1_desc: "Большие орбитальные модули, перепрофилированные для обеспечения выработки, хранения и транспортировки энергии на другие подстанции или внешние орбитали".
+ 	building_tec_hab_energy_processor_effect: "Это £building£ Здание обеспечит дополнительные §Y$tec_loc_housing$§! и §Y£job_technician£ Техник§! задания масштабируются в зависимости от количества из §Y£district£ $district_tec_hab_extraction_plural$§!."
+
+ 	building_tec_hab_food_processor_1: "Орбитальный гидропонный узел"
+ 	building_tec_hab_food_processor_1_plural: "Орбитальные гидропонные узлы"
+ 	building_tec_hab_food_processor_1_desc: "Большие орбитальные модули, перепрофилированные для удовлетворения потребностей крупных гидропонных инфраструктур, сортировки, сбора и переработки биомассы, необходимой для развития главной станции или любой станции, требующей ti от надлежащих логистических установок".
+ 	building_tec_hab_food_processor_effect: "Это £building£ Здание обеспечит дополнительные §Y$tec_loc_housing$§! и §Y£job_technician£ Техник§! задания масштабируются в зависимости от количества из §Y£district£ $district_tec_hab_extraction_plural$§!."
+ # /
+
+ # ------------------------------------------------- Advanced Orbital Buildings
+ 	building_tec_hab_research_processor_1: "Орбитальный исследовательский центр"
+ 	building_tec_hab_research_processor_1_plural: "Орбитальные исследовательские центры"
+ 	building_tec_hab_research_processor_1_desc: "Большие орбитальные модули, перепрофилированные под технологические лаборатории и обеспечивающие доступ к ресурсам для разработки новых технологий в координации с другими станциями и установками".
+ 	building_tec_hab_research_processor_effect: "Это £building£ Здание обеспечит дополнительные §Y$tec_loc_housing$§! и §Y£job_researcher£ Исследование§! масштабирование рабочих мест в зависимости от количества из §Y£district£ $district_tec_hab_utility_plural$§!."
+
+	building_tec_hab_research_processor_1:0 "Орбитальный исследовательский центр"
+	building_tec_hab_research_processor_1_plural:0 "Орбитальные исследовательские центры"
+	building_tec_hab_research_processor_1_desc:0 "Большие орбитальные модули, перепрофилированные под технологические лаборатории и обеспечивающие доступ к ресурсам для разработки новых технологий в координации с другими станциями и установками".
+	building_tec_hab_research_processor_effect:0 "Это £building£ Здание предоставит дополнительные §Y$tec_loc_housing$§! и §Y£job_researcher£ Исследование§! масштабирование рабочих мест в зависимости от количества §Y£district£ $district_tec_hab_utility_plural$§!."
+
+ # /
+
+ # ------------------------------------------------- Habitats
+ 	district_tec_hab_extraction: "Район орбитального извлечения"
+ 	district_tec_hab_extraction_plural: "$district_tec_hab_extraction$s"
+ 	district_tec_hab_extraction_desc: "Большие участки центральной орбитальной среды обитания перепрофилированы для координации суборбитальных станций и добывающих станций по всей системе, повышая их эффективность и обеспечивая надлежащую передачу рабочей силы и ресурсов между каждой из них".
+ 	district_tec_hab_extraction_effect_production: "Это $tec_loc_district$ приводит к дополнительному §Y$tec_loc_basic_resources$§! основываясь на количестве §Yорбиталей§! своего типа (£energy£ £minerals£), или §Y£building£ Гидропонные§! здания (£food£)."
+ 	district_tec_hab_extraction_effect_buildings: ""
+	#$t$- Increases the effects of §Y£building£ Habitat Orbital Buildings§!."
+ 	district_tec_hab_extraction_effect_swap: "$t$- Заменяемый с помощью §Y$tec_loc_planet_decision$§!."
+ 	district_tec_hab_extraction_effect_orbitals: " \n§HТекущие орбитали:§! $TABBED_NEW_LINE$ $tec_loc_energy$ §Y[solar_system.GetNumOrbitalsEnergy]/[solar_system.GetMaxOrbitalsEnergy]§! $TABBED_NEW_LINE$ $tec_loc_minerals$ §Y[solar_system.GetNumOrbitalsMining]/[solar_system.GetMaxOrbitalsMining]§! \n\n§HТекущее увеличение гидропоники:§! $TABBED_NEW_LINE$ $tec_loc_food$ +§Y[this.GetHydroponicNumbers]§! \n\n"
+
+	district_tec_hab_extraction_no_energy:0 "§Y$tec_loc_c_warning$ - $tec_loc_energy$ passive production has been redirected to $district_hab_energ$s§!."
+	district_tec_hab_extraction_no_minerals:0 "§Y$tec_loc_c_warning$ - $tec_loc_minerals$ passive production has been redirected to $district_hab_mining$s§!."
+	district_tec_hab_extraction_no_food:0 "§Y$tec_loc_c_warning$ - $tec_loc_food$ passive production has been redirected to $district_tec_hab_food$s§!."
+
+	# Energy
+ 	district_hab_energy_effect_production: "Это $tec_loc_district$ приводит к дополнительному §Y$tec_loc_energy$§! основываясь на количестве §Yорбиталей§! своего типа (£energy£)"
+ 	district_hab_energy_effect_buildings: "$t$- Усиливает действие §Y£building£ Энергетические орбитальные здания§!."
+ 	district_hab_energy_effect_orbitals: " \n§HТекущие орбитали:§! $TABBED_NEW_LINE$ $tec_loc_energy$ §Y[solar_system.GetNumOrbitalsEnergy]/[solar_system.GetMaxOrbitalsEnergy]§! \n\n"
+	# Minerals
+ 	district_hab_mining_effect_production: "Это $tec_loc_district$ приводит к дополнительному §Y$tec_loc_minerals$§! основываясь на количестве §Yорбиталей§! своего типа (£minerals£)"
+ 	district_hab_mining_effect_buildings: "$t$- Усиливает действие §Y£building£ Полезные ископаемые орбитальных зданий§!."
+ 	district_hab_mining_effect_orbitals: " \n§HТекущие орбитали:§! $TABBED_NEW_LINE$ $tec_loc_minerals$ §Y[solar_system.GetNumOrbitalsMining]/[solar_system.GetMaxOrbitalsMining]§! \n\n"
+	# Food
+ 	district_tec_hab_food: "Гидропонный район"
+ 	district_tec_hab_food_plural: "Гидропонные районы"
+ 	district_tec_hab_food_desc: "Целые коридоры и секции этой среды обитания заполнены гидропонными установками, генерирующими биологический материал с искусственно увеличенными циклами".
+	# \n\nDue to the special requirements this district needs, it's only possible to obtain when the habitat is built §Yorbiting§! a resourceless §YGas giant§! or §YFrozen planet§!."
+ 	district_tec_hab_food_effect_production: "Это $tec_loc_district$ приводит к дополнительному §Y$tec_loc_food$§! основываясь на количестве §Y£building£ Гидропонные§! здания из его тип (£food£) и уровень улучшения среды обитания"
+ 	district_tec_hab_food_effect_buildings: "$t$- Усиливает действие §Y£building£ Продовольственные орбитальные здания§!."
+ 	district_tec_hab_food_effect_orbitals: " \n§HТекущее увеличение гидропоники:§! $TABBED_NEW_LINE$ $tec_loc_food$ +§Y[this.GetHydroponicNumbers]§! \n\n"
+
+	# Utility
+ 	district_tec_hab_utility: "Коммунальный район"
+ 	district_tec_hab_utility_plural: "$district_tec_hab_utility$"
+ 	district_tec_hab_utility_desc: "Большие секции центральной орбитальной среды обитания перепрофилированы для координации суборбитальных станций и исследовательских станций по всей системе, повышая их эффективность и обеспечивая надлежащую передачу рабочей силы и ресурсов между каждой из них".
+ 	district_tec_hab_utility_effect_production: "Это $tec_loc_district$ приводит к дополнительному §Y$tec_loc_research_resources$§! основываясь на количестве §Yорбиталей§! своего типа (£trigger_tec_research£)"
+ 	district_tec_hab_utility_effect_buildings: ""
+ 	district_tec_hab_utility_effect_swap: "$t$- Заменяемый с помощью §Y$tec_loc_planet_decision$§!."
+ 	district_tec_hab_utility_effect_orbitals: " \n§HТекущие орбитали:§! $TABBED_NEW_LINE$ $tec_loc_research$ §Y[solar_system.GetNumOrbitalsScience]/[solar_system.GetMaxOrbitalsScience]§! \n\n"
+
+	# Science
+ 	district_hab_science_effect_production: "Это $tec_loc_district$ приводит к дополнительному §Y$tec_loc_research_resources$§! основываясь на количестве §Yорбиталей§! своего типа (£minerals£)"
+ 	district_hab_science_effect_buildings: "$t$- Усиливает действие §Y£building£ Исследовательские орбитальные здания§!."
+ 	district_hab_science_effect_orbitals: " \n§HТекущие орбитали:§! $TABBED_NEW_LINE$ $tec_loc_research$ §Y[solar_system.GetNumOrbitalsScience]/[solar_system.GetMaxOrbitalsScience]§! \n\n"
+
+	# Commercial
+ 	district_hab_commercial_effect_production: ""
+ 	district_hab_commercial_effect_buildings: ""
+ 	district_hab_commercial_effect_orbitals: ""
+    
+    # Единство
+ 	district_tec_hab_unity:0  "Орбитальное управление"
+ 	district_tec_hab_unity_plural:0  "$district_tec_hab_unity$s"
+ 	district_tec_hab_unity_desc:0  "Централизованные административные и логистические центры доминируют на больших участках этой среды обитания, что облегчает местное и глобальное управление ресурсами".
+ 	district_tec_hab_unity_effect_production:0  ""
+ 	district_tec_hab_unity_effect_buildings:0  ""
+ 	district_tec_hab_unity_effect_swap:0  "$t$- Заменяемый с помощью §Y$tec_loc_planet_decision$§!."
+ 	district_tec_hab_unity_effect_orbitals:0  ""
+
+	# Военный
+ 	district_tec_hab_military:0  "Орбитальное командование"
+ 	district_tec_hab_military_plural:0  "$district_tec_hab_military$s"
+ 	district_tec_hab_military_desc:0  "Защищенные военные анклавы и военно-морские доки подходят для этих орбитальных секций, чтобы обеспечить лучшую военно-морскую логистику и стратегическое управление".
+ 	district_tec_hab_military_effect_production:0  ""
+ 	district_tec_hab_military_effect_buildings:0  ""
+ 	district_tec_hab_military_effect_swap:0  "$t$- Заменяемый с помощью §Y$tec_loc_planet_decision$§!."
+ 	district_tec_hab_military_effect_orbitals:0  ""
+
+	# Arcologies
+ 	district_tec_hab_arcology_housing: "Жилой модуль"
+ 	district_tec_hab_arcology_housing_plural: "Жилые модули"
+ 	district_tec_hab_arcology_housing_desc: "Целая часть мира аркологии среды обитания посвящена блокам за блоками эффективных и усовершенствованных корпусов, постоянно обследуемых и обслуживаемых".
+
+ 	district_tec_hab_arcology_trade: "Коммерческий модуль"
+ 	district_tec_hab_arcology_trade_plural: "Коммерческие модули"
+ 	district_tec_hab_arcology_trade_desc: "Целые разделы мира аркологии среды обитания посвящены разнообразной коммерческой деятельности".
+
+ 	district_tec_hab_arcology_maintenance: "Модуль технического обслуживания"
+ 	district_tec_hab_arcology_maintenance_plural: "Модули технического обслуживания"
+ 	district_tec_hab_arcology_maintenance_desc: "Ранее использовавшиеся в качестве промышленных зон, эти пустые секции Habitat World теперь заполнены современными генераторами и модулями технического обслуживания для обеспечения правильной работы станции".
+
+ 	district_tec_hab_arcology_foundry: "Литейный модуль"
+ 	district_tec_hab_arcology_foundry_plural: "Литейные модули"
+ 	district_tec_hab_arcology_foundry_desc: "Целые участки этого мира аркологии среды обитания теперь перепрофилированы в специализированные кузницы и заводы по переработке сплавов, что обеспечивает отличные результаты производства".
+
+ 	district_tec_hab_arcology_industry: "Промышленный модуль"
+ 	district_tec_hab_arcology_industry_plural: "Промышленные модули"
+ 	district_tec_hab_arcology_industry_desc: "Целые участки этого мира аркологии среды обитания теперь перепрофилированы в специализированные предприятия по производству товаров, обеспечивающие отличные результаты производства".
+
+ 	district_tec_hab_arcology_research: "Исследовательский модуль"
+ 	district_tec_hab_arcology_research_plural: "Исследовательские модули"
+ 	district_tec_hab_arcology_research_desc: "Обширные части этой среды обитания были перепрофилированы в эффективные исследовательские и инновационные центры".
+
+ 	district_tec_hab_arcology_administration: "Модуль администрирования"
+ 	district_tec_hab_arcology_administration_plural: "Модули администрирования"
+ 	district_tec_hab_arcology_administration_desc: "В централизованных модулях среды обитания некоторые перепрофилированные установки служат хостом для непрерывных административных и логистических операций по управлению станцией".
+
+ 	district_tec_hab_arcology_leisure: "Служебный модуль"
+ 	district_tec_hab_arcology_leisure_plural: "Служебные модули"
+ 	district_tec_hab_arcology_leisure_desc: "Участки общего пользования и назначения мира Аркологии Хабитат оставлены для отдыха, технического обслуживания или общего ухода за населением".
+ # /
+ # District decisions
+	
+ decision_tec_habitat_reform:0  "§B§! Реконструировать среду обитания"
+ 	decision_tec_habitat_reform_desc:0  "Приложив некоторые усилия и потратив время, мы сможем адаптировать модули этой среды обитания в соответствии с нашими потребностями".
+ 	decision_tec_habitat_reform_tooltip:0  "Позволяет повторно адаптировать и разблокировать несколько §Y$tec_loc_districts$§! на [planet.GetName]. Стоимость каждой разблокировки или замены увеличивается §Y$tec_loc_alloys$§!"
+
+ 	tec_habitats.100.name:0  "Реконструировать среду обитания"
+ 	tec_habitats.100.desc:0  "Выберите район обитания, который нуждается в реконструкции на §Y[planet.GetName]§!"
+ 	tec_habitats.100_exit:0  "Выход"
+ 	tec_habitats.100_exit_tooltip:0  "Отменяет это меню ремоделирования среды обитания. Для дальнейших изменений в среде обитания £planet£ решение о ремоделировании среды обитания должно быть принято повторно."
+ 	tec_habitats.100_separator_extraction:0  "-------------- Модули извлечения --------------"
+ 	tec_habitats.100_separator_utility:0  "-------------- Служебный модуль --------------"
+
+ 	tec_habitats.100_max_extraction_reached:0  "Может быть включено максимум 3 района добычи".
+
+ 	tec_habitats.100_extraction_energy:0  "$district_hab_energy$ - Модуль"
+ 	tec_habitats.100_extraction_energy_tooltip:0  "Добавляет £district£ $district_hab_energy$ в качестве доступного района орбитальной среды обитания. \nЭтот район производит §Y$tec_loc_energy$§!, основываясь на количестве $tec_loc_energy$ орбиталей, и обеспечиваем §Y£job_technician£ Техник§! вакансии. \n§HЗаменяет треть £district£ $district_tec_hab_extraction$ с £district£ $district_hab_energy$.§!"
+ 	tec_habitats.100_extraction_energy_remove:0  "§RУдалить $district_hab_energy$ - Модуль§!"
+ 	tec_habitats.100_extraction_energy_remove_tooltip:0  "Отключает £district£ $district_hab_generator$ район. Если на планете присутствует менее 3 районов добычи, то $district_tec_hab_extraction$ снова будет доступен."
+
+ 	tec_habitats.100_extraction_minerals:0  "$district_hab_mining$ Модуль"
+ 	tec_habitats.100_extraction_minerals_tooltip:0  "Добавляет £district£ $district_hab_mining$ как доступный район орбитальной среды обитания. \nЭтот район производит §Y$tec_loc_minerals$§!, основываясь на количестве £minerals£ добывающих орбиталей, и обеспечиваем §Y£job_miner£ Шахтер§! вакансии. \n§HЗаменяет треть £district£ $district_tec_hab_extraction$ с £district£ $district_hab_mining$.§!"
+ 	tec_habitats.100_extraction_minerals_remove:0  "§RУдалить $district_hab_mining$ - Модуль§!"
+ 	tec_habitats.100_extraction_minerals_remove_tooltip:0  "Отключает £district£ $district_hab_mining$ район. Если на планете присутствует менее 3 районов добычи, то $district_tec_hab_extraction$ снова будет доступен."
+
+ 	tec_habitats.100_extraction_food:0  "$district_tec_hab_food$ Модуль"
+ 	tec_habitats.100_extraction_food_tooltip:0  "Добавляет £district£ $district_tec_hab_food$ в качестве доступного района орбитальной среды обитания. \nЭтот район производит §Y$tec_loc_food$§!, исходя из количества £building£ гидропонных зданий, и обеспечить §Y£job_farmer£ Сельскохозяйственный§! вакансии. \n§HЗаменяет треть £district£ $district_tec_hab_extraction$ с £district£ $district_tec_hab_food$.§!"
+ 	tec_habitats.100_extraction_food_remove:0  "§RУдалить $district_tec_hab_food$ - Модуль§!"
+ 	tec_habitats.100_extraction_food_remove_tooltip:0  "Отключает £district£ $district_tec_hab_food$ район. Если на планете присутствует менее 3 районов добычи, то $district_tec_hab_extraction$ снова будет доступен."
+
+ 	tec_habitats.100_extraction_amenities:0  "$district_hab_cultural$ - Модуль"
+ 	tec_habitats.100_extraction_amenities_tooltip:0  "Добавляет £district£ $district_hab_cultural$ в качестве доступного района орбитальной среды обитания. \nЭтот район обеспечивает §Y$tec_loc_amenity$§! рабочие места. \n§HЗаменяет треть £district£ $district_tec_hab_extraction$ с £district£ $district_hab_cultural$.§!"
+ 	tec_habitats.100_extraction_amenities_remove:0  "§RУдалить $district_hab_cultural$ - Модуль§!"
+ 	tec_habitats.100_extraction_amenities_remove_tooltip:0  "Отключает £district£ $district_hab_cultural$ район. Если на планете присутствует менее 3 районов добычи, то $district_tec_hab_extraction$ снова будет доступен."
+
+ 	tec_habitats.100_utility_research:0  "$district_hab_science$ - Полезность"
+ 	tec_habitats.100_utility_research_tooltip:0  "Добавляет £district£ $district_hab_science$ в качестве доступного района орбитальной среды обитания. \nЭтот район производит §Y$tec_loc_research_resources$§!, основываясь на количестве £trigger_tec_research£ исследовательских орбиталей, и обеспечить §Y£job_researcher£ Исследователь§! вакансии. \n§HЗаменяет £district£ $district_tec_hab_utility$ или полностью в других коммунальных районах.§!"
+
+ 	tec_habitats.100_utility_unity:0  "$district_tec_hab_unity$ - Полезность"
+ 	tec_habitats.100_utility_unity_tooltip:0  "Добавляет £district£ $district_tec_hab_unity$ в качестве доступного района орбитальной среды обитания. \nЭтот район обеспечивает §Y$tec_loc_unity$§! рабочие места. \n§HЗаменяет £district£ $district_tec_hab_utility$ или полностью в других коммунальных районах.§!"
+
+ 	tec_habitats.100_utility_trade:0  "$district_hab_commercial$ - Полезность"
+ 	tec_habitats.100_utility_trade_tooltip:0  "Добавляет £district£ $district_hab_commercial$ в качестве доступного района орбитальной среды обитания. \nЭтот район обеспечивает §Y$tec_loc_trade$§! рабочие места. \n§HЗаменяет £district£ $district_tec_hab_utility$ или полностью в других коммунальных районах.§!"
+
+ 	tec_habitats.100_utility_military:0  "$district_tec_hab_military$ - Полезность"
+ 	tec_habitats.100_utility_military_tooltip:0  "Добавляет £district£ $district_tec_hab_military$ в качестве доступного района орбитальной среды обитания. \nЭтот район обеспечивает §Y$tec_loc_naval_cap$§! рабочие места. \n§HЗаменяет £district£ $district_tec_hab_utility$ или полностью в других коммунальных районах.§!"
+
+	# Old decisions
+ 	decision_tec_habitat_unlock_generator: "Модернизировать орбитальные генераторы"
+ 	decision_tec_habitat_unlock_generator_desc: "--"
+ 	decision_tec_habitat_unlock_generator_effects: "Добавляет £district£ $district_hab_energy$ в качестве доступного района орбитальной среды обитания. \nЭтот район производит §Y$tec_loc_energy$§!, основываясь на количестве $tec_loc_energy$ орбиталей, и обеспечиваем §Y£job_technician£ Техник§! вакансии. \n§HЗаменяет треть £district£ $district_tec_hab_extraction$ с £district£ $district_hab_energy$.§! \n\n§RЭто решение не может быть отменено§!"
+ 	decision_tec_habitat_unlock_generator_effects_replace_extraction: "Добавляет £district£ $district_hab_energy$ в качестве доступного района орбитальной среды обитания. \nЭтот район производит §Y$tec_loc_energy$§!, основываясь на количестве £minerals£ энергетических орбиталей, и обеспечиваем §Y£job_technician£ Техник§! вакансии. \n§HПолностью заменяет и устраняет возможность создавать £district£ $district_tec_hab_extraction$.§! \n\n§RЭто решение не может быть отменено§!"
+
+ 	decision_tec_habitat_unlock_mining: "Модернизация орбитальных шахтных отсеков"
+ 	decision_tec_habitat_unlock_mining_desc: "--"
+ 	decision_tec_habitat_unlock_mining_effects: "Добавляет £district£ $district_hab_mining$ в качестве доступного района орбитальной среды обитания. \nЭтот район производит §Y$tec_loc_minerals$§!, основываясь на количестве £minerals£ добывающих орбиталей, и обеспечиваем §Y£job_miner£ Шахтер§! вакансии. \n§HЗаменяет треть £district£ $district_tec_hab_extraction$ с £district£ $district_hab_mining$.§! \n\n§RЭто решение не может быть отменено§!"
+ 	decision_tec_habitat_unlock_mining_effects_replace_extraction: "Добавляет £district£ $district_hab_mining$ в качестве доступного района орбитальной среды обитания. \nЭтот район производит §Y$tec_loc_minerals$§!, основываясь на количестве £minerals£ добывающих орбиталей, и обеспечиваем §Y£job_miner£ Шахтер§! вакансии. \n§HПолностью заменяет и устраняет возможность создавать £district£ $district_tec_hab_extraction$.§! \n\n§RЭто решение не может быть отменено§!"
+
+ 	decision_tec_habitat_unlock_farming: "Модернизация орбитальной гидропоники"
+ 	decision_tec_habitat_unlock_farming_desc: "--"
+ 	decision_tec_habitat_unlock_farming_effects: "Добавляет £district£ $district_tec_hab_food$ в качестве доступного района орбитальной среды обитания. \nЭтот район производит §Y$tec_loc_food$§!, исходя из количества £building£ гидропонных зданий, и обеспечить §Y£job_farmer£ Сельскохозяйственный§! вакансии. \n§HЗаменяет треть £district£ $district_tec_hab_extraction$ с £district£ $district_tec_hab_food$.§! \n\n§RЭто решение не может быть отменено§!"
+ 	decision_tec_habitat_unlock_farming_effects_replace_extraction: "Добавляет £district£ $district_tec_hab_food$ в качестве доступного района орбитальной среды обитания. \nЭтот район производит §Y$tec_loc_food$§!, исходя из количества £building£ гидропонных зданий, и обеспечить §Y£job_farmer£ Сельскохозяйственный§! вакансии. \n§HПолностью заменяет и устраняет возможность создавать £district£ $district_tec_hab_extraction$.§! \n\n§RЭто решение не может быть отменено§!"
+
+  decision_tec_habitat_unlock_trade: "Обновить торговый модуль"
+  decision_tec_habitat_unlock_trade_desc: "--"
+  decision_tec_habitat_unlock_trade_effects: "Добавляет £district£ $district_hab_commercial$ в качестве доступного района орбитальной среды обитания. \nЭтот район обеспечивает §Y$tec_loc_trade$§! рабочие места. \n§HЗаменяет собой £district£ $district_tec_hab_utility$ целиком и полностью.§! \n\n§RЭто решение не может быть отменено§!"
+
+  decision_tec_habitat_unlock_research: "Обновить исследовательский модуль"
+  decision_tec_habitat_unlock_research_desc: "--"
+  decision_tec_habitat_unlock_research_effects: "Добавляет £district£ $district_hab_research$ в качестве доступного района орбитальной среды обитания. \nЭтот район производит §Y$tec_loc_research_resources$§!, основываясь на количестве £trigger_tec_research£ исследовательских орбиталей, и обеспечить §Y£job_researcher£ Исследователь§! вакансии. \n§HЗаменяет собой £district£ $district_tec_hab_utility$ целиком и полностью.§! \n\n§RЭто решение не может быть отменено§!"
+
+  decision_tec_habitat_unlock_leisure: "Обновить модуль досуга"
+  decision_tec_habitat_unlock_leisure_desc: "--"
+  decision_tec_habitat_unlock_leisure_effects: "Добавляет £district£ $district_hab_cultural$ в качестве доступного района орбитальной среды обитания. \nЭтот район обеспечивает §Y$tec_loc_amenity$§! рабочие места. \n§HЗаменяет треть £district£ $district_tec_hab_extraction$ с £district£ $district_hab_cultural$.§! \n\n§RЭто решение не может быть отменено§!"
+  decision_tec_habitat_unlock_leisure_effects_replace_extraction: "Добавляет £district£ $district_hab_cultural$ в качестве доступного района орбитальной среды обитания. \nЭтот район обеспечивает §Y$tec_loc_amenity$§! рабочие места. \n§HПолностью заменяет и устраняет возможность создавать £district£ $district_tec_hab_extraction$.§! \n\n§RЭто решение не может быть отменено§!"
+	# /
+
+	decision_tec_orbital_autobuilder_focus_minor:0 "Автоматизировать сборку орбиты - Второстепенные орбитали"
+	decision_tec_orbital_autobuilder_focus_minor_desc:0 "Определяет приоритет создания §Yмалых орбиталей§! на подходящих планетах".
+	decision_tec_orbital_autobuilder_focus_minor_effects:0 "Приоритетное §YСоздание малой орбиты§!"
+
+
+ # /
+# /
+
+# ---------------------------------------------------------------
+# ASCENSION PATH SUBFEATURES
+# ---------------------------------------------------------------
+
+ # ------------------------------------------------- Replicants
+ 	tec_replicant_army: "Коммандос-репликант"
+ 	tec_replicant_army_plural: "Коммандос-репликанты"
+ 	tec_replicant_army_desc: "Специально обученная элита репликантов, которые используют все возможности своего тела с помощью специальных устройств маскировки, искажения и маскировочного эффекта, чтобы вызвать хаос во вражеской инфраструктуре".
+ # /
+ # ------------------------------------------------- Cyborgs
+	# Specific ap armies
+ 	tec_mech_army: "Армия роботов"
+ 	tec_mech_army_plural: "Армии мехов"
+ 	tec_mech_army_desc: "Киборги с мощным вооружением и механизированными экзоскелетами, являющиеся целым подразделением для ведения боевых действий, разрушающих по отдельности, и тем более в группе".
+ # /
+ # ------------------------------------------------- Biopsio
+ 	tec_biopsio_army: "Фанатик гармоник"
+ 	tec_biopsio_army_plural: "Фанатики гармоники"
+ 	tec_biopsio_army_desc: "Псионически усиленные воины, которые больше сосредоточены на подавлении врага духом и истощении, а не на нанесении прямого урона".
+
+ 	building_tec_biopsionic_convergence: "Святилище конвергенции"
+ 	building_tec_biopsionic_convergence_desc: "Эти сооружения служат путем и краеугольным камнем для необходимых псионических сил, требующихся для ритуала сближения, и, таким образом, местом сбора для этого важного события".
+ 	building_tec_biopsionic_allow_convergence: "Это здание позволяет §YРитуалу сближения§! воздействовать на эту колонию и произведет дополнительное £sr_zro£ §Yресурсы§! с каждым успешным ритуалом."
+ # /
+ # ------------------------------------------------- Cyberpsio
+	# Misc
+ 	mod_tec_entropy: "£sr_dark_matter£ Энтропия"
+ 	mod_tec_entropy_desc: "Энтропия - это относительная мера аномальной материи, перемещенной из других измерений в наше собственное, что приводит к нестабильности локального течения времени и пространства из-за задействованной экзотической физики хаоса"
+
+	# OLD Extractor
+ 		building_tec_cyberpsionic_extractor_1: "Размерный экстрактор"
+ 		building_tec_cyberpsionic_extractor_1_plural: "Размерные экстракторы"
+ 		building_tec_cyberpsionic_extractor_1_desc: "Эта структура, изготовленная из экзотических и мощных материалов, преобразует остаточную аномальную энергию в очищенную пыль, которая может быть использована для создания самых современных кибернетических и псионических творений".
+
+ 		building_tec_cyberpsionic_extractor_2: "Размерный экстрактор"
+ 		building_tec_cyberpsionic_extractor_2_desc: "Эта усовершенствованная конструкция, изготовленная из экзотических и мощных материалов, преобразует огромное количество аномальной энергии в очищенную пыль, которая может быть использована для создания самых современных кибернетических и псионических творений".
+
+ 		building_tec_cyberpsionic_extractor_3: "Размерный экстрактор"
+ 		building_tec_cyberpsionic_extractor_3_desc: "Эта усовершенствованная структура, изготовленная из экзотических и мощных материалов, отводит непостижимое количество аномальной энергии из других измерений в очищенную пыль, которая может быть использована для создания самых современных кибернетических и псионических творений".
+
+ 		building_tec_cyberpsionic_danger_1: "У нас есть в общей сложности §Y[root.owner.tec_dimensional_extraction_buildings_ref]§! Здания для извлечения габаритов. Извлечение составляет §Yноминальное§! и не сопряжено с каким-либо риском."
+ 		building_tec_cyberpsionic_danger_2: "У нас есть в общей сложности §Y[root.owner.tec_dimensional_extraction_buildings_ref]§! Здания для извлечения габаритов. Извлечение §Gувеличивается§! и никакого риска при этом нет."
+ 		building_tec_cyberpsionic_danger_3: "У нас есть в общей сложности §Y[root.owner.tec_dimensional_extraction_buildings_ref]§! Здания для извлечения габаритов. Извлечение §Gувеличивается§!, но §Rриск§! пространственных вторжений §Rрастет§!."
+ 		building_tec_cyberpsionic_danger_4: "У нас есть в общей сложности §Y[root.owner.tec_dimensional_extraction_buildings_ref]§! Здания для извлечения габаритов. Извлечение §Gсильно увеличено§!, но §Rриск§! пространственных вторжений §Rогромен§!."
+ 		building_tec_cyberpsionic_danger_5: "У нас есть в общей сложности §Y[root.owner.tec_dimensional_extraction_buildings_ref]§! Здания для извлечения габаритов. Извлечение §Gсильно увеличено§!, и поэтому §Rриск нападения§! псионических сущностей на нашу империю."
+	#/
+
+	# New extractor
+ 		building_tec_cyberpsionic_extractor: "Фазовый экстрактор"
+ 		building_tec_cyberpsionic_extractor_plural: "Размерные экстракторы"
+ 		building_tec_cyberpsionic_extractor_desc: "Эта структура, изготовленная из экзотических и мощных материалов, преобразует остаточную аномальную энергию в очищенную пыль, которая может быть использована для создания самых современных кибернетических и псионических творений".
+
+ 		building_tec_cyberpsionic_extractor_entropy: "Общая энтропия империи: §R[tec_entropy_display]%§! \n\n Это £building£ §YЗдание§! имеет свой §Y$tec_loc_energy$§! производство увеличилось на §R$mod_tec_entropy$§! \n Эффект масштабирования от энтропии: §G[tec_entropy_scaling]x§!"
+ 		building_tec_cyberpsionic_extractor_danger_0: "$building_tec_cyberpsionic_extractor_entropy$ \n Риск: §BНесуществующий§!"
+ 		building_tec_cyberpsionic_extractor_danger_1: "$building_tec_cyberpsionic_extractor_entropy$ \n Риск: §GНизкий§!"
+ 		building_tec_cyberpsionic_extractor_danger_2: "$building_tec_cyberpsionic_extractor_entropy$ \n Риск: §YУмеренный§!"
+ 		building_tec_cyberpsionic_extractor_danger_3: "$building_tec_cyberpsionic_extractor_entropy$ \n Риск: §HУмеренный§!"
+ 		building_tec_cyberpsionic_extractor_danger_4: "$building_tec_cyberpsionic_extractor_entropy$ \n Риск: §PВысокий§!"
+ 		building_tec_cyberpsionic_extractor_danger_5: "$building_tec_cyberpsionic_extractor_entropy$ \n Риск: §RОчень высокий§!"
+	# /
+	# Transmuter
+ 		building_tec_cyberpsionic_transmuter: "Фазовый преобразователь"
+ 		building_tec_cyberpsionic_transmuter_plural: "Фазовые преобразователи"
+ 		building_tec_cyberpsionic_transmuter_desc: "Усовершенствованные установки, преобразующие частицы Зро в энергию путем применения физических принципов к аномальной межпространственной материи"
+
+ 		building_tec_cyberpsionic_transmuter_designation: "Это £building£ §YЗдание§! адаптирует свое производство к условиям планеты £stability£ §YОбозначение§!"
+ 		building_tec_cyberpsionic_transmuter_entropy: "Общая энтропия империи: §R[tec_entropy_display]%§! \n\n Это £building£ §YЗдание§! имеет свое производство увеличился на §R$mod_tec_entropy$§! \n Эффект масштабирования от энтропии: §G_[141]_x§!"
+	# /
+	# Webway
+ 		building_tec_cyberpsionic_gate: "Фазовый затвор"
+ 		building_tec_cyberpsionic_gate_plural: "Фазовые вентили"
+ 		building_tec_cyberpsionic_gate_desc: "ЧТО НУЖНО СДЕЛАТЬ"
+
+ 		building_tec_cyberpsionic_gate_entropy: "Общая энтропия империи: §R[tec_entropy_display]%§! \n\n Это £building£ §YЗдание§! имеет свое производство увеличился на §R$mod_tec_entropy$§! \n Эффект масштабирования от энтропии: §G_[141]_x§!"
+	# /
+ # /
+# /
+
+# ---------------------------------------------------------------
+# TO SORT
+# ---------------------------------------------------------------
+	# Gestalt Arcologies
+ 	district_tec_gestalt_arcology_tooltip: "Этот $tec_loc_district$ ограничен своим $tec_loc_capital_tier$ и количеством $tec_loc_planet_ascension_plural$ \n\n"
+# /
