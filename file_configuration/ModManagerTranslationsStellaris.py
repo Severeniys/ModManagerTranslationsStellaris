@@ -12,7 +12,8 @@ from PyQt6.QtCore import (
     QSize,
     QPoint, 
     QThreadPool, 
-    QTimer  
+    QTimer,  
+    QByteArray
     )
 # --- Импорты из QtGui ---
 # Все, что связано с графикой, цветом, шрифтами, иконками, художниками (painter)
@@ -316,8 +317,16 @@ class ModManagerTranslationsStellaris(QMainWindow):
         self.splitter.addWidget(self.tree_view)
         
         # Восстанавливаем состояние разделителя, если оно сохранено
-        if hasattr(self, 'splitter_geometry'):
-            self.splitter.restoreState(self.splitter_geometry)
+        if hasattr(self, 'splitter_geometry') and isinstance(self.splitter_geometry, QByteArray):
+            try:
+                self.splitter.restoreState(self.splitter_geometry)
+                log_debug("Состояние сплиттера успешно восстановлено.")
+            except Exception as e:
+                log_error(f"Ошибка при восстановлении состояния сплиттера: {e}.", exc_info=True)
+        else:
+            log_debug("Не удалось получить корректное состояние сплиттера. Используется состояние по умолчанию.")
+        #if hasattr(self, 'splitter_geometry'):
+        #    self.splitter.restoreState(self.splitter_geometry)
         
         # Устанавливаем корневой путь для дерева и настраиваем его отображение
         self.modell.setRootPath(self.dir_assembling)
@@ -1163,7 +1172,7 @@ class ModManagerTranslationsStellaris(QMainWindow):
         # Загрузка положения и размера окна
         self.resize(self.settings.value("size_mmanager", QSize(1564, 772)))
         self.move(self.settings.value("pos_mmanager", QPoint(188, 150)))   
-        self.splitter_geometry = self.settings.value("splitter/geometry")   
+        self.splitter_geometry = self.settings.value("splitter/geometry", QByteArray()) 
         self.dir_content = self.settings.value("dir_content", "")        
         self.dir_assembling = self.settings.value("dir_assembling", os.path.join(self.project_root, "assembling"))
         
