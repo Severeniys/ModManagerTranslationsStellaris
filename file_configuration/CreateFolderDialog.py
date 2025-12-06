@@ -33,7 +33,7 @@ class CreateFolderDialog(QDialog):
         layout = QVBoxLayout(self)
 
         # Метка с указанием пути
-        path_label = QLabel("Имя сборки:")
+        path_label = QLabel("Имя сборки сборки должно быть одноимённым с модом локализации:")
         layout.addWidget(path_label)
 
         # Поле ввода с именем папки

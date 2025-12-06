@@ -1494,9 +1494,9 @@ class ModManagerTranslationsStellaris(QMainWindow):
             log_debug(f"Создание папки с именем: {folder_name}")            
             os.chdir(self.dir_assembling)
             os.mkdir(folder_name)
-            log_debug("Текущая директория изменилась на folder:", os.getcwd())
+            log_debug(f"Текущая директория изменилась на folder: {os.getcwd()}")
             os.chdir(self.project_root)
-            log_debug("Текущая директория изменилась на folder:", os.getcwd())            
+            log_debug(f"Текущая директория изменилась на folder: {os.getcwd()}")            
         else:
             log_debug("Создание папки отменено")            
 
