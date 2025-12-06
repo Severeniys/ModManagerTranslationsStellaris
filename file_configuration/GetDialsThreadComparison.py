@@ -1,4 +1,14 @@
-from file_configuration.import_libraries.libraries import *
+# file_configuration.GetDialsThreadComparison.py
+import os
+import re
+
+from PyQt6.QtCore import (
+    QObject, pyqtSignal
+    )
+
+from file_configuration.constants import ProcessingConstants
+
+from file_configuration.utils import setup_logger, log_debug, log_error, log_info, log_warning, log_signal
 
 class GetDialsThreadComparison(QObject):
     finishSignal_1 = pyqtSignal(str, str, list)
@@ -8,6 +18,14 @@ class GetDialsThreadComparison(QObject):
         self.filename_1_ = filename_1_
         self.filename_2_ = filename_2_  
         
+        self.language_file_1_ = self.poisk_language(self.filename_1_)
+        self.language_file_2_ = self.poisk_language(self.filename_2_)
+        
+        if self.language_file_1_ and self.language_file_2_:            
+            log_debug(f"GetDialsThreadComparison - Языки определены: self.language_file_1_: {self.language_file_1_} - self.language_file_2_: {self.language_file_2_}")
+        else:            
+            log_error("Не удалось определить один или оба языка файла. Прекращаю работу.")                
+            return # Выходим из метода
         
     def start1(self):
         if self.filename_1_ == "":            
@@ -20,27 +38,24 @@ class GetDialsThreadComparison(QObject):
         linesr = ""
         linestel = ""
         lines1, lines2 = [], []
-        self.chablong = "\A[ ]{0,}\t{0,}[ ]{0,}[^#: ]+:{1}"
-        self.chablong_text = "\S+:{1}"        
+        self.chablong = r"\A[ ]{0,}\t{0,}[ ]{0,}[^#: ]+:{1}"
+        self.chablong_text = r"\S+:{1}"        
         try:
             with open(self.filename_2_, encoding="utf-8-sig") as file_l1:
                 lines1_ = file_l1.readlines()
             
             with open(self.filename_1_, encoding="utf-8-sig") as file_l2:
                 lines2_ = file_l2.readlines()
-        except FileNotFoundError as e:
-            self.dialog = f"Файл не найден: {e}"
-            self.finishSignal_error.emit(self.dialog)           
+        except FileNotFoundError as e:            
+            self.finishSignal_error.emit(f"Файл не найден: {e}")           
             return
         
         except (IOError, OSError) as e:
-            self.dialog = f"Ошибка при открытии или чтении файла: {e}"
-            self.finishSignal_error.emit(self.dialog) 
+            self.finishSignal_error.emit(f"Ошибка при открытии или чтении файла: {e}") 
             return
 
-        except Exception as e: # На случай других непредвиденных ошибок при чтении
-            self.dialog = f"Произошла непредвиденная ошибка при работе с файлами: {e}"
-            self.finishSignal_error.emit(self.dialog) 
+        except Exception as e: # На случай других непредвиденных ошибок при чтении            
+            self.finishSignal_error.emit(f"Произошла непредвиденная ошибка при работе с файлами: {e}") 
             return
         
         for linestel in lines2_:
@@ -53,7 +68,7 @@ class GetDialsThreadComparison(QObject):
             lenn_text += "\n"   
             bools, intsis_1 = self.chablong_text_if_bool(linesl)                      
             if self.english_nait_english(linesl):                                        
-                linesr += "l_russian:\n"                        
+                linesr += F"l_{self.language_file_1_}:\n"                        
                 continue                       
             elif self.is_blank(linesl):
                 linesr += "\n"
@@ -85,13 +100,22 @@ class GetDialsThreadComparison(QObject):
                     lines1 += spisok                                     
         self.listOfChangedKeys = lines1
         self.dirs = os.path.abspath(os.curdir)
-        #name = os.path.basename(self.filename_1_).split('.')[0]        
-        #self.pytj = f"{self.dirs}/katalog/init_l/{name}.yml"                
         with open(self.filename_1_, 'w', encoding="utf-8-sig") as file_l:
             file_l.write(linesr)        
         self.vozvrat_signal()                       
     
-       
+    def poisk_language(self, filename):
+        """
+        Извлекает код языка из имени файла на основе регулярных выражений.
+        """
+        file = os.path.basename(filename)
+        for language in ProcessingConstants.LOCALISATION:
+            language_file = re.search(language, file)
+            if language_file:
+                return language_file.group()
+        log_warning(f"Не удалось определить язык для файла: {file}")
+        return None
+    
     def chablong_text_if_bool(self, s):
         intsis_1 = re.findall(self.chablong, s)
         if intsis_1 != []:
@@ -111,10 +135,11 @@ class GetDialsThreadComparison(QObject):
             return True
         else:
             return False  
-       
+    
     def english_nait_english(self, s):
-        english_nait = re.findall("l_english:", s)
-        if "l_english:" in english_nait:
+        language = F"l_{self.language_file_2_}:"
+        english_nait = re.findall(language, s)
+        if language in english_nait:
             return True
         return False
     
