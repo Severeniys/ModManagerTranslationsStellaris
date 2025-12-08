@@ -713,9 +713,9 @@ class ModManagerTranslationsStellaris(QMainWindow):
             setmod = contextMenu.addMenu("Добавить в поле редактирования")
 
             setmod2 = setmod.addAction("russian.yml без rezerv.yml")
-            setmod2.triggered.connect(lambda: self.setmod1(2))
-            setmod1 = setmod.addAction("russian.yml с rezerv.yml")
-            setmod1.triggered.connect(lambda: self.setmod1(1))                 
+            setmod2.triggered.connect(lambda: self.set_mod_name(2))
+            setmod_name = setmod.addAction("russian.yml с rezerv.yml")
+            setmod_name.triggered.connect(lambda: self.set_mod_name(1))                 
                 
         contextMenu.addSeparator()
         
@@ -967,7 +967,7 @@ class ModManagerTranslationsStellaris(QMainWindow):
     def Button_l(selfk, pytj):
         os.startfile(pytj)            
     
-    def setmod1(self, i):
+    def set_mod_name(self, i):
         source_language = self._extract_source_language_from_rezerv(self.path_fail)                
         if re.findall(ProcessingConstants.REZERV_S, self.path_fail) in self.rezerv:
                 ErrorMessageBox.show_error("Этот файл не подлежит копированию в эту строку.")              
@@ -991,9 +991,9 @@ class ModManagerTranslationsStellaris(QMainWindow):
                     return
                 break
         i -= 1        
-        fail = (self.path_fail.replace("/".join(self.path_fail.split("/")[:-i]), "")).replace(self.localisation, "english")        
+        fail = (self.path_fail.replace("/".join(self.path_fail.split("/")[:-i]), "")).replace(self.localisation, source_language)        
         self.qLine2.setText(f"{self.dir_content}/{nomer}/localisation{fail}")                    
-    
+        
     def name_obo(self):     
         if not self.dir_content or not os.path.isdir(self.dir_content):
             self.statusBar().showMessage("Ошибка: Путь к папке модов Steam не настроен.")
@@ -1274,51 +1274,70 @@ class ModManagerTranslationsStellaris(QMainWindow):
         log_debug("Настройки сохраненны.")    
         
 ######################################################################################################   
-    def _extract_source_language_from_rezerv(self, mod_dir_path):
+    def _extract_source_language_from_rezerv(self, input_path):
         """
-        Ищет в папке mod_dir_path подпапку по шаблону 'vs - <language> - rezerv'
-        и извлекает из нее код языка.
+        Ищет в иерархии путей выше input_path папку, соответствующую шаблону 'vs - <language>...',
+        и извлекает оттуда код языка.
 
-        :param mod_dir_path: Путь к папке мода в "Сборке".
-        :return: Код языка (например, 'english') или None, если не найдено.
-        """        
+        :param input_path: Путь к файлу (например, .yml) ИЛИ путь к папке.
+        :return: Код языка (например, 'russian') или None.
+        """
+        
+        available_languages = ProcessingConstants.LOCALISATION
         
         try:
-            # Проверяем, является ли путь директорией
-            if not os.path.isdir(mod_dir_path):
-                return None
-
-            # Просматриваем содержимое папки
-            for item in os.listdir(mod_dir_path):
-                item_path = os.path.join(mod_dir_path, item)
-                
-                # Проверяем, что это папка и она соответствует шаблону
-                if os.path.isdir(item_path) and item.startswith("vs - ") and "rezerv" in item:
-                    # Имя подпапки: "vs - english - rezerv"
-                    # Разделяем на части: ["vs", "english", "rezerv"]
-                    parts = item.split(' - ')
-                    
-                    # Язык - это вторая часть (индекс 1)
-                    if len(parts) >= 2:
-                        language_code = parts[1].strip().lower()
-                        
-                        # Валидация: проверяем, есть ли такой язык в списке доступных
-                        if language_code in ProcessingConstants.LOCALISATION:
-                            log_debug(f"Язык-источник '{language_code}' успешно извлечен из папки '{item}'")
-                            return language_code
-                        else:
-                            log_debug(f"Найденный язык '{language_code}' не входит в список разрешенных.")
-                            return None
-                            
-        except FileNotFoundError:
-            log_debug(f"Папка не найдена: {mod_dir_path}")
-            return None
-        except Exception as e:
-            log_error(f"Ошибка при поиске языка в папке {mod_dir_path}: {e}")
-            return None
+            current_path = input_path
             
-        log_debug(f"Подпапка с языком не найдена в {mod_dir_path}")
-        return None
+            # 1. Если входной путь - это файл, начинаем искать из его родительской папки
+            if not os.path.isdir(current_path):
+                current_path = os.path.dirname(current_path)
+                log_debug(f"Входной путь был файлом. Начинаем поиск с директории: {current_path}")
+
+            # 2. Цикл подъема по дереву директорий (для поиска корня мода)
+            # Мы будем подниматься вверх до тех пор, пока не найдем папку,
+            # содержащую нужный нам шаблон 'vs - ...'
+            
+            # Максимальное количество шагов подъема, чтобы избежать бесконечного цикла
+            max_depth = 10 
+            
+            for _ in range(max_depth):
+                if not os.path.isdir(current_path):
+                    log_debug(f"Текущий путь '{current_path}' больше не является директорией. Прерывание поиска.")
+                    break
+                    
+                # 3. Ищем в ТЕКУЩЕЙ директории папки, соответствующие шаблону
+                for item in os.listdir(current_path):
+                    item_path = os.path.join(current_path, item)
+                    
+                    if os.path.isdir(item_path) and item.startswith("vs - ") and item.endswith("rezerv"):
+                        parts = item.split(' - ')
+                        
+                        if len(parts) >= 2:
+                            language_code = parts[1].strip().lower()
+                            
+                            if language_code in available_languages:
+                                log_debug(f"Язык-источник '{language_code}' успешно извлечен из папки '{item}' в пути: {current_path}")
+                                return language_code
+                            # Если мы нашли папку 'vs - ...', но язык неизвестен, то лучше сразу выйти
+                            else:
+                                log_debug(f"Найденная папка '{item}' содержит неизвестный язык '{language_code}'.")
+                                return None
+
+                # 4. Если ничего не найдено в текущей директории, поднимаемся на уровень выше
+                parent_dir = os.path.dirname(current_path)
+                
+                # Если мы достигли корня файловой системы, останавливаемся
+                if parent_dir == current_path:
+                    break
+                    
+                current_path = parent_dir
+                
+            log_debug(f"Подпапка с языком не найдена в иерархии, начиная от {input_path}")
+            return None
+
+        except Exception as e:
+            log_error(f"Критическая ошибка при поиске языка в иерархии {input_path}: {e}")
+            return None
     
     def _on_file_renamed(self, path: str, old_name: str, new_name: str):
         """
