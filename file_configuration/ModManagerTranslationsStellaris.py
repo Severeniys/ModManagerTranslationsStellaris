@@ -120,9 +120,6 @@ class ModManagerTranslationsStellaris(QMainWindow):
         self.status_bar.addPermanentWidget(self.mode_label)
         self.status_bar.addPermanentWidget(self.info_label)        
         
-        self.thread_pool = QThreadPool()
-        self.thread_pool.setMaxThreadCount(1) # Достаточно одного потока для подсчета
-        
         self.word_counter = WordCounter()
         # Подключаем сигнал от счетчика к нашему методу обновления интерфейса
         self.word_counter.count_complete.connect(self._update_word_count_ui)
@@ -166,7 +163,9 @@ class ModManagerTranslationsStellaris(QMainWindow):
     def _potoc_Thread_pool(self):        
         
         # 2. Потоки и пулы задач
-        self.thread_pool = QThreadPool() # Для "легких" задач вроде подсчета слов
+        self.thread_pool = QThreadPool()
+        self.thread_pool.setMaxThreadCount(1)
+        # Для "легких" задач вроде подсчета слов
         self.tetr = None # Для "тяжелых" задач (LocalisationManagerThread)
         self.objekt = None
         self.text_processing_thread = TextProcessingThread(
@@ -922,6 +921,11 @@ class ModManagerTranslationsStellaris(QMainWindow):
             log_debug("Алгоритм пока не готов.")
             self.setEnabled(True) # Включаем кнопку, так как поток не запускался
             self.is_processing = False # Сбрасываем флаг
+    
+    def return_function_updates(self, path_fail, stre=None, listOfChangedKeys=None):
+        self.setEnabled(True)
+        if stre == "None":            
+            return
 
     def handle_finish_success(self):
         log_debug("Поток успешно завершил работу.")
@@ -996,13 +1000,13 @@ class ModManagerTranslationsStellaris(QMainWindow):
         
     def name_obo(self):     
         if not self.dir_content or not os.path.isdir(self.dir_content):
-            self.statusBar().showMessage("Ошибка: Путь к папке модов Steam не настроен.")
+            log_debug("Ошибка: Путь к папке модов Steam не настроен.")
             QMessageBox.warning(self, "Ошибка конфигурации", "Путь к папке `steamapps/workshop/content` не найден.")
             return            
 
         self._start_task(
             task_name='update_mod_name',
-            source_dir=None,
+            source_dir=self.dir_content,
             source_language=None
         )
         
@@ -1014,7 +1018,7 @@ class ModManagerTranslationsStellaris(QMainWindow):
             self.perehod()
             self.textconverter.open_TC(self.path_fail, lovie=lovie)                                   
         else:
-            self.statusBar().showMessage(f"None")
+            log_debug(f"None")
                     
     def copy_mod_to_game_folder(self):
         """Копирует готовый перевод в папку mod игры."""
@@ -1370,7 +1374,8 @@ class ModManagerTranslationsStellaris(QMainWindow):
         """
         # 1. Очищаем предыдущую задачу, если она есть
         if self.tetr and self.tetr.isRunning():
-            log_debug("Предыдущая задача еще выполняется. Запуск новой невозможен.")            
+            log_debug("Предыдущая задача еще выполняется. Запуск новой невозможен.")  
+            QMessageBox.warning(self, "Занято", "Предыдущая задача еще выполняется. Пожалуйста, дождитесь её завершения.")          
             return
 
         self.setEnabled(False) # Блокируем интерфейс на время выполнения
@@ -1387,6 +1392,12 @@ class ModManagerTranslationsStellaris(QMainWindow):
         )
         self.objekt.moveToThread(self.tetr)
         
+        self.objekt.finishSignalLocalisation_1.connect(self.tetr.quit)
+        self.objekt.finishSignalLocalisation_1.connect(self._on_task_finished)
+        self.objekt.finishSignalLocalisation_2.connect(self._on_task_status_update)        
+        self.objekt.finishSignalLocalisation_3.connect(self._rename_update_path)
+        
+        
         # 3. В зависимости от задачи, настраиваем и запускаем нужный метод
         if task_name == 'prepare_translation':
             # Параметры уже переданы в конструктор, остался только запуск нужного метода
@@ -1399,7 +1410,7 @@ class ModManagerTranslationsStellaris(QMainWindow):
             self.tetr.started.connect(self.objekt.copy_to_game_mod)
         
         elif task_name == 'update_mod_name':            
-            self.tetr.started.connect(lambda: self.objekt.update_mod_name)
+            self.tetr.started.connect(lambda: self.objekt.update_mod_name(createt=True))
             
         else:
             log_error(f"Неизвестная задача: {task_name}")
@@ -1407,10 +1418,7 @@ class ModManagerTranslationsStellaris(QMainWindow):
             return
 
         # 4. Подключаем сигналы для всех задач (они у всех одни)
-        self.objekt.finishSignal_1.connect(self._on_task_finished)
-        self.objekt.finishSignal_2.connect(self._on_task_status_update) 
-        self.objekt.finishSignal_1.connect(self.tetr.quit)
-        self.objekt.finishSignal_3.connect(self._rename_update_path)
+        
         
         self.tetr.start()
     
@@ -1426,7 +1434,8 @@ class ModManagerTranslationsStellaris(QMainWindow):
     
     def _on_task_finished(self, message):
         """Слот для обработки сигнала о завершении задачи."""
-        log_debug(f"Задача завершена. Сообщение: {message}")        
+        log_debug(f"Задача завершена. Сообщение: {message}") 
+        
         self.setEnabled(True) # Разблокируем интерфейс
         
 
@@ -1478,10 +1487,7 @@ class ModManagerTranslationsStellaris(QMainWindow):
             logger_instance.logger.add(sink=lambda m: print(m, end=""), level="ERROR", format="{time:HH:mm:ss} | {level} | {message}")
             log_debug("Логирование установлено на уровень: ERROR")
     
-    def return_function_updates(self, path_fail, stre=None, listOfChangedKeys=None):
-        self.setEnabled(True)
-        if stre == "None":            
-            return
+    
                 
     def return_function_1(self, text):
         os.chdir(self.project_root)                

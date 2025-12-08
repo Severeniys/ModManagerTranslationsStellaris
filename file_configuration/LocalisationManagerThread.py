@@ -13,9 +13,9 @@ class LocalisationManagerThread(QObject):
     """
     Управляет процессом копирования, подготовки и применения локализации модов.
     """
-    finishSignal_1 = pyqtSignal(str)
-    finishSignal_2 = pyqtSignal(str)
-    finishSignal_3 = pyqtSignal(str)
+    finishSignalLocalisation_1 = pyqtSignal(str)
+    finishSignalLocalisation_2 = pyqtSignal(str)
+    finishSignalLocalisation_3 = pyqtSignal(str)
 
     def __init__(self, target_language, base_dir, stellaris_dir, source_dir, source_language=None):
         """
@@ -30,12 +30,12 @@ class LocalisationManagerThread(QObject):
         super().__init__()
         self.target_language = target_language
         self.base_dir = base_dir  # "Сборка" или "Индекс" в зависимости от задачи
-        self.source_dir = source_dir  # Папка мода в Steam
-        self.stellaris_dir = stellaris_dir
-        self.source_language = source_language
-        
+        self.stellaris_dir = stellaris_dir # Папка мода в Steam
+        self.source_dir = source_dir          
+        self.source_language = source_language        
         self.staging_localisation_dir = os.path.join(self.source_dir, "localisation")
-        self.folders_to_copy = [self.source_language, 'random_names', 'replace']
+        if self.source_language:
+            self.folders_to_copy = [self.source_language, 'random_names', 'replace']
         self.rezerv = ProcessingConstants.REZERV
 
     
@@ -46,20 +46,22 @@ class LocalisationManagerThread(QObject):
         :param mod_dir_in_assembly: Папка мода в "Сборке", имя которого нужно обновить.
         :param steam_mods_content_dir: Путь к папке `steamapps/workshop/content/281990`.
         """
+        log_info("Начало задачи: обновление имени мода")
         try:
-            
+                        
             mod_dir_in_assembly = self.base_dir
-            # 2. Используем self.source_dir
+            # 2. Используем self.source_dir            
             steam_mods_content_dir = self.source_dir
             # 1. Извлекаем ID мода из пути к папке в Сборке
             # Например, "D:/Сборки/My Mod - 123456789"
-            if createt:  
+            if createt: 
+                log_debug("Выполнение обновление имени") 
                 folder_name = os.path.basename(mod_dir_in_assembly)
-            else:
+            else:                   
                 folder_name = os.path.basename(steam_mods_content_dir)
             match = re.search(r"\d{9,10}", folder_name)
             if not match:
-                self.vozvrat_signal("Ошибка: Не удалось найти ID мода в имени папки.")
+                self.vozvrat_signal("Ошибка: Не удалось найти ID мода в имени папки.")                
                 return
             mod_id = match.group(0) # "123456789"
 
@@ -104,12 +106,12 @@ class LocalisationManagerThread(QObject):
             if os.path.exists(new_dir_path):                
                 log_debug(f"Error: Папка '{new_folder_name}' уже существует.")
                 # Можно предложить пользователю обновить существующую папку
-                self.finishSignal_3.emit(new_folder_name, new_dir_path)                
+                self.finishSignalLocalisation_3.emit(new_folder_name, new_dir_path)                
                 return # Выходим, т.к. обновление - это отдельная задача
                 
             if createt:    
                 if os.path.exists(mod_dir_in_assembly):
-                    os.rename(mod_dir_in_assembly, new_dir_path)
+                    os.rename(self.base_dir, new_dir_path)
                     log_debug(f"Папка переименована: {mod_dir_in_assembly} -> {new_dir_path}")
                     self.vozvrat_signal(f"Имя мода успешно обновлено на: {new_folder_name}")
                 else:
@@ -561,7 +563,5 @@ class LocalisationManagerThread(QObject):
         
     # --- Сигналы ---
     def vozvrat_signal(self, text):
-        self.finishSignal_1.emit(text)
+        self.finishSignalLocalisation_1.emit(text)
         
-    def vozvrat_signal_statusarr(self, text):
-        self.finishSignal_2.emit(text)
