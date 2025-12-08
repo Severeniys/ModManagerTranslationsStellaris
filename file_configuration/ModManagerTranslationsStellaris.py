@@ -681,76 +681,82 @@ class ModManagerTranslationsStellaris(QMainWindow):
 ######################################################################################################
         
     def contextMenuEvent(self, event): #Контекстное меню
-        
+        self.path_fail = ""
         contextMenu = QMenu(self)
         
         index = self.tree_view.currentIndex() 
         self.path_fail = self.modell.filePath(index)
-        self.statusBar().showMessage(f"{self.path_fail}")
-        
-        # --- Логика для ПАПОК ---
-        if os.path.isdir(self.path_fail):
-            open_action = contextMenu.addAction("Открыть папку")
-            open_action.triggered.connect(lambda: os.startfile(self.path_fail))
-            
-            open_name = contextMenu.addAction("Переименовать")
-            open_name.triggered.connect(self.open_rename_dialog)
-            
-            open_steam_action = contextMenu.addAction("Открыть в Steam")
-            open_steam_action.triggered.connect(self.open_steam_mod_folder_by_id)
-        
-        elif os.path.isfile(self.path_fail):
-            open_action = contextMenu.addAction("Открыть файл")
-            open_action.triggered.connect(lambda: os.startfile(self.path_fail))
-                        
-            open_con = contextMenu.addAction("Открыть в редакторе")
-            open_con.triggered.connect(lambda checked, path=self.path_fail: self._handle_open_in_editor(path))            
-        
-            open_name = contextMenu.addAction("Переименовать")
-            open_name.triggered.connect(self.open_rename_dialog)        
-        
-            setmod = contextMenu.addMenu("Добавить в поле редактирования")
-
-            setmod2 = setmod.addAction("russian.yml без rezerv.yml")
-            setmod2.triggered.connect(lambda: self.set_mod_name(2))
-            setmod_name = setmod.addAction("russian.yml с rezerv.yml")
-            setmod_name.triggered.connect(lambda: self.set_mod_name(1))                 
-                
-        contextMenu.addSeparator()
-        
-        if os.path.basename(self.path_fail) in self.get_subdirectories(self.dir_assembling):
+        if self.path_fail == "":
+            self.path_fail = self.dir_assembling 
             set_k = contextMenu.addAction("Создать каталог")       
             set_k.triggered.connect(self.getdials_2)
+            contextMenu.exec(self.mapToGlobal(event.pos()))            
+        else:        
+            # --- Логика для ПАПОК ---
+            if os.path.isdir(self.path_fail):
+                open_action = contextMenu.addAction("Открыть папку")
+                open_action.triggered.connect(lambda: os.startfile(self.path_fail))
+                
+                open_name = contextMenu.addAction("Переименовать")
+                open_name.triggered.connect(self.open_rename_dialog)
+                
+                open_steam_action = contextMenu.addAction("Открыть в Steam")
+                open_steam_action.triggered.connect(self.open_steam_mod_folder_by_id)
             
-        set_k = contextMenu.addAction("Скопировать в mod")       
-        set_k.triggered.connect(self.copy_mod_to_game_folder)  
-        
-        if self.path_fail.split("/")[-2] in self.get_subdirectories(self.dir_assembling):
-            set_k = contextMenu.addAction("Обновить файлы мода")       
-            set_k.triggered.connect(self.start_mod_update_from_steam)
+            elif os.path.isfile(self.path_fail):
+                open_action = contextMenu.addAction("Открыть файл")
+                open_action.triggered.connect(lambda: os.startfile(self.path_fail))
+                            
+                open_con = contextMenu.addAction("Открыть в редакторе")
+                open_con.triggered.connect(lambda checked, path=self.path_fail: self._handle_open_in_editor(path))            
+            
+                open_name = contextMenu.addAction("Переименовать")
+                open_name.triggered.connect(self.open_rename_dialog)        
+            
+                setmod = contextMenu.addMenu("Добавить в поле редактирования")
 
-            name_ob = contextMenu.addAction("Обновить имя мода")
-            name_ob.triggered.connect(self.name_obo) 
-        
-        if "rezerv" in self.path_fail.split("/")[-1]:
-            rezerv_k = contextMenu.addAction("Обновить rezerv")
-            rezerv_k.triggered.connect(self.name_obo) 
+                setmod2 = setmod.addAction("russian.yml без rezerv.yml")
+                setmod2.triggered.connect(lambda: self.set_mod_name(2))
+                setmod_name = setmod.addAction("russian.yml с rezerv.yml")
+                setmod_name.triggered.connect(lambda: self.set_mod_name(1))                 
+                    
+            contextMenu.addSeparator()
+            
+            if os.path.basename(self.path_fail) in self.get_subdirectories(self.dir_assembling):
+                set_k = contextMenu.addAction("Создать каталог")       
+                set_k.triggered.connect(self.getdials_2)
+                
+            set_k = contextMenu.addAction("Скопировать в mod")       
+            set_k.triggered.connect(self.copy_mod_to_game_folder)  
+            
+            if self.path_fail.split("/")[-2] in self.get_subdirectories(self.dir_assembling):
+                set_k = contextMenu.addAction("Обновить файлы мода")       
+                set_k.triggered.connect(self.start_mod_update_from_steam)
 
-        if os.path.basename(self.path_fail) in self.get_subdirectories(self.dir_assembling):
-            addmod = contextMenu.addMenu("Добавить мод")
+                name_ob = contextMenu.addAction("Обновить имя мода")
+                name_ob.triggered.connect(self.name_obo) 
             
-            languages = ProcessingConstants.LOCALISATION
-            log_debug(f"DEBUG: contextMenuEvent - languages = {languages}")  
+            if "rezerv" in self.path_fail.split("/")[-1]:
+                rezerv_k = contextMenu.addAction("Обновить rezerv")
+                rezerv_k.triggered.connect(self.name_obo) 
+
+            if os.path.basename(self.path_fail) in self.get_subdirectories(self.dir_assembling):
+                addmod = contextMenu.addMenu("Добавить мод")
+                
+                languages = ProcessingConstants.LOCALISATION
+                log_debug(f"DEBUG: contextMenuEvent - languages = {languages}")  
+                
+                for lang in languages:   
+                    addmode = addmod.addAction(f"Файлы - {lang}")
+                    addmode.triggered.connect(functools.partial(self.addmodf, lang))            
+                
+            contextMenu.addSeparator()
             
-            for lang in languages:   
-                addmode = addmod.addAction(f"Файлы - {lang}")
-                addmode.triggered.connect(functools.partial(self.addmodf, lang))            
-            
-        contextMenu.addSeparator()
+            delitAction = contextMenu.addAction("Удалить")
+            delitAction.triggered.connect(self.open_menu1)        
+            contextMenu.exec(self.mapToGlobal(event.pos()))
         
-        delitAction = contextMenu.addAction("Удалить")
-        delitAction.triggered.connect(self.open_menu1)        
-        contextMenu.exec(self.mapToGlobal(event.pos()))
+        log_info(f"{self.path_fail}")        
         
 ######################################################################################################
     def _handle_open_in_editor(self, file_path: str):
