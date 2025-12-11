@@ -2,6 +2,8 @@
 import os
 import re
 import qdarktheme
+import webbrowser
+import subprocess
 
 # --- Импорты из QtCore ---
 # Все, что связано с базовыми типами данных, событиями, таймерами, потоками, настройками
@@ -700,8 +702,12 @@ class ModManagerTranslationsStellaris(QMainWindow):
                 open_name = contextMenu.addAction("Переименовать")
                 open_name.triggered.connect(self.open_rename_dialog)
                 
-                open_steam_action = contextMenu.addAction("Открыть в Steam")
-                open_steam_action.triggered.connect(self.open_steam_mod_folder_by_id)
+                if re.search(r"(\d{9,10})", os.path.basename(self.path_fail)):                
+                    open_steam_action = contextMenu.addAction("Открыть папку мода в Steam")
+                    open_steam_action.triggered.connect(self.open_steam_mod_folder_by_id)
+                    # --- НОВАЯ КНОПКА ---
+                    open_workshop_action = contextMenu.addAction("Открыть страницу мода в Steam")
+                    open_workshop_action.triggered.connect(self.open_steam_workshop_page_by_id)
             
             elif os.path.isfile(self.path_fail):
                 open_action = contextMenu.addAction("Открыть файл")
@@ -812,6 +818,66 @@ class ModManagerTranslationsStellaris(QMainWindow):
         else:
             log_error(f"Папка мода ID {mod_id} не найдена по пути: {mod_folder_path}")
             ErrorMessageBox.show_error(f"Не удалось найти папку мода в Steam. Возможно, мод был удален.")
+            
+    def open_steam_workshop_page_by_id(self):
+        """
+        Пытается открыть страницу мода в приложении Steam.
+        Если не удается, открывает в веб-браузере.
+        """
+        log_debug(f"Попытка открыть страницу мода в Steam Workshop.")
+        
+        folder_name = os.path.basename(self.path_fail)
+        mod_id = None
+        match = re.search(r"(\d{9,10})", folder_name)
+        
+        if match:
+            mod_id = match.group(1)
+            
+        if not mod_id:
+            log_error("ID мода не найден в имени папки.")
+            ErrorMessageBox.show_error("ID мода не найден в имени папки.")
+            return
+
+        # URL для открытия в браузере (запасной вариант)
+        browser_url = f"https://steamcommunity.com/sharedfiles/filedetails/?id={mod_id}"
+        
+        # Протокол для запуска приложения Steam (основной вариант)
+        steam_protocol = f"steam://openurl/{browser_url}"
+        
+        steam_launch_successful = False
+        
+        # --- 1. Попытка открыть через Steam-протокол ---
+        try:
+            log_debug(f"Попытка запустить Steam-протокол: {steam_protocol}")
+            
+            if os.name == 'nt': # Windows
+                # os.startfile хорошо работает с .exe и зарегистрированными протоколами
+                os.startfile(steam_protocol)
+                steam_launch_successful = True
+            
+            else: # Linux / macOS
+                # На других ОС часто надежнее использовать системный вызов
+                subprocess.Popen(['xdg-open', steam_protocol]) # Linux
+                # На macOS можно использовать: subprocess.Popen(['open', steam_protocol])
+                steam_launch_successful = True
+                
+        except Exception as e:
+            log_warning(f"Не удалось запустить Steam-протокол напрямую. Ошибка: {e}. Переход к браузеру.")
+            # steam_launch_successful остается False
+            pass
+            
+        
+        # --- 2. Если запуск Steam-протокола не удался (или не сработал) ---
+        if not steam_launch_successful:
+            log_debug(f"Запуск Steam-протокола не удался. Открываем в браузере: {browser_url}")
+            
+            try:
+                webbrowser.open(browser_url)
+                log_debug("URL успешно открыт в веб-браузере.")
+            except Exception as e:
+                # --- 3. Обработка ошибки (Провал и там, и там) ---
+                log_error(f"Критическая ошибка: Не удалось открыть ни в Steam, ни в браузере. {e}")
+                ErrorMessageBox.show_error(f"Не удалось открыть страницу мода ни в приложении Steam, ни в браузере.")
             
     def open_rename_dialog(self):
         """

@@ -343,7 +343,16 @@ class LocalisationManagerThread(QObject):
 
         # --- 2. НОВАЯ ЛОГИКА ОПРЕДЕЛЕНИЯ ИМЕНИ ЦЕЛЕВОЙ ПАПКИ (без изменений) ---
         relative_path = os.path.normpath(os.path.relpath(self.base_dir, self.source_dir))
-        collection_name = relative_path.split(os.sep)[0]
+        collection_name_with_id = relative_path.split(os.sep)[0]
+        log_debug(f"copy_to_game_mod - collection_name: {collection_name_with_id}")
+        pattern_to_remove = r"\s-\s\d{9,10}$"
+        clean_collection_name = re.sub(pattern_to_remove, "", collection_name_with_id).strip()
+        if clean_collection_name:
+            collection_name = clean_collection_name
+        else:
+            # Это может произойти, если имя было ТОЛЬКО ID. Используем исходное имя.
+            collection_name = collection_name_with_id
+        log_debug(f"copy_to_game_mod - collection_name: {collection_name}")
         target_mod_base_path = os.path.join(self.stellaris_dir, collection_name)
         target_localisation_path = os.path.join(target_mod_base_path, "localisation")
 
